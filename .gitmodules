@@ -1,0 +1,9 @@
+[submodule "deps/eastl"]
+	path = deps/eastl
+	url = git://github.com/paulhodge/EASTL.git
+[submodule "deps/oglplus"]
+	path = deps/oglplus
+	url = git://oglplus.git.sourceforge.net/gitroot/oglplus/oglplus
+[submodule "deps/glm"]
+	path = deps/glm
+	url = git://github.com/g-truc/glm.git

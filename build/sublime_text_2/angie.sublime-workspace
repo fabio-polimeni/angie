@@ -1,0 +1,369 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"n",
+				"next"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Fabio/Projects/angie/include/angie.platform.hpp",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"git",
+				"Git: Gui"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Disable Package"
+			],
+			[
+				"pacla",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Snippet: ",
+				"Snippet: main()"
+			],
+			[
+				"Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pake",
+				"Package Control: Discover Packages"
+			],
+			[
+				"paka",
+				"Package Control: List Packages"
+			],
+			[
+				"Paka",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 243.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Fabio/Projects/angie/inc/angie.platform.hpp",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EASTLEAWebKit/local/include/EASTL/internal/config.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EABaseEAWebKit/local/include/Common/EABase/config/eaplatform.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EABaseEAWebKit/local/include/Common/EABase/config/eacompiler.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/coreallocatorEAWebKit/local/include/coreallocator/icoreallocator.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/coreallocatorEAWebKit/local/include/coreallocator/version.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EASTLEAWebKit/local/include/EASTL/allocator.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EASTLEAWebKit/local/source/allocator.cpp",
+		"/C/Users/Fabio/Downloads/libnui-nui3-77d524d/ngl_config.win32.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EASTLEAWebKit/local/include/EASTL/internal/eastl_rw.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EASTLEAWebKit/local/source/assert.cpp",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/source/internal/EAWebKitEASTLHelpers.cpp",
+		"/C/MinGW/msys/1.0/home/Fabio/projects.sublime-project",
+		"/C/Users/Fabio/Downloads/aery32-aery32-0a7365b/examples/spi.cpp",
+		"/C/Users/Fabio/Downloads/aery32-aery32-0a7365b/examples/displays/hd44780.cpp",
+		"/C/Users/Fabio/Downloads/aery32-aery32-0a7365b/examples/main.cpp",
+		"/E/fabio/Projects/GeometricTools/WildMagic5/LibMathematics/Meshes/Wm5TriangleKey.h",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/detail/call_stack.hpp",
+		"/C/Users/Fabio/AppData/Local/Temp/Temp1_cpp-netlib-0.5.zip/cpp-netlib-0.5/boost/network/include/http/client.hpp",
+		"/C/MinGW/msys/1.0/home/Fabio/clang/bin/tets.cpp",
+		"/C/Users/Fabio/AppData/Local/Temp/Temp1_cpp-netlib-0.5.zip/cpp-netlib-0.5/boost/network.hpp",
+		"/C/Users/Fabio/AppData/Local/Temp/Temp1_cpp-netlib-0.5.zip/cpp-netlib-0.5/boost/network/message.hpp",
+		"/C/Users/Fabio/AppData/Local/Temp/Temp1_cpp-netlib-0.5.zip/cpp-netlib-0.5/boost/network/protocol/http/client.hpp",
+		"/C/Users/Fabio/AppData/Local/Temp/Temp1_cpp-netlib-0.5.zip/cpp-netlib-0.5/boost/network/protocol.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/old/detail/openssl_context_service.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/old/detail/openssl_stream_service.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/old/detail/openssl_operation.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/impl/rfc2818_verification.ipp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/impl/context.ipp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/impl/src.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/src/asio_ssl.cpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/read_until.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/impl/context.hpp",
+		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/detail/openssl_init.hpp",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/src/main.cpp",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
+		"/C/MinGW/lib/gcc/mingw32/4.7.0/include/c++/type_traits",
+		"/C/Users/Fabio/Projects/develop/yan/framework/source/yan.window.cpp",
+		"/C/Users/Fabio/Projects/develop/yan/framework/include/yan.window.hpp",
+		"/C/Users/Fabio/Projects/develop/yan/core/include/yan.report.hpp",
+		"/C/Users/Fabio/Projects/develop/yan/core/include/yan.platform.hpp",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/Default.sublime-keymap",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket.cpp",
+		"/C/MinGW/include/wctype.h",
+		"/C/MinGW/lib/gcc/mingw32/4.7.0/include/c++/cwchar",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_platform.h",
+		"/C/MinGW/include/ctype.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_comm_ssh.cpp",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/rude_socketimpl.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_comm.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_comm.cpp",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_comm_normal.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/rude_socketimpl.cpp",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_connect.cpp",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_connect.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_connect_socks4.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_tcpclient.h",
+		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_comm_ssh.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/generated_link/WKAL/SVGImage.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/BAL/OWBAL/Concretizations/Memory/WK/BCArenaWK.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/generated_link/OWBAL/wtf/Threading.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/generated_link/OWBAL/Threading.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/generated_link/WKAL/SVGPaintServerSolid.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/generated_link/WKAL/SVGPaintServer.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EABaseEAWebKit/local/include/Common/EABase/config/eacompilertraits.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/JavaScriptCore/wtf/Platform.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/PPMallocEAWebKit/local/include/PPMalloc/internal/dllinfo.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/EASTLEAWebKit/local/include/EASTL/bonus/sort_extra.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/UTFXmlEAWebKit/local/include/UTFXml/internal/Config.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/PPMallocEAWebKit/local/include/PPMalloc/internal/config.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/source/EAWebKitSTLWrapper.cpp",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/UTFXmlEAWebKit/local/include/UTFXml/XmlDomReader.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/source/EARaster.cpp",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/source/sys/DLLInterface.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/WebKit/OrigynWebBrowser/WebCoreSupport/WebChromeClient.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/source/EAWebKitMemory.cpp",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/WebCore/xml/DOMParser.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/JavaScriptCore/wtf/ThreadingWin.cpp",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/WebCore/css/CSSParserValues.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/Webkit-owb/WebCore/css/CSSReflectionDirection.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/PPMallocEAWebKit/local/include/PPMalloc/EAStackAllocator.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/libpngEAWebKit/local/include/libpng12/pngconf.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/libpngEAWebKit/local/include/libpng12/png.h",
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/include/EAWebKit/internal/icu/include/common/unicode/utf8.h",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/synch/util/features.h",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/acestl/memory/message_block_functions.hpp",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/acestl/network/socket_functions.hpp",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/platformstl.hpp",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/performance/performance_counter.hpp",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/synch/atomic_types.h",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/filesystem/path.hpp",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/wtlstl/wtlstl.hpp",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/atlstl/window/window.hpp",
+		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/platformstl.h",
+		"/C/Users/Fabio/Downloads/collada-dom-2.4.0/dom/src/modules/LIBXMLPlugin/daeLIBXMLPlugin.cpp",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/Terminal.sublime-settings",
+		"/C/peanut/winplot.exe",
+		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES2/OGLES2AlphaTest.cpp",
+		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES2/Content/Wallwire.cpp",
+		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES3/OGLES3AlphaTest.cpp",
+		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES2/Content/VertShader.cpp",
+		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/compile.hxml",
+		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/Main.js",
+		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/Main.hx",
+		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/Hello.n",
+		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/main.hx",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Alignment/Base File.sublime-settings",
+		"/C/MinGW/include/stdlib.h",
+		"/C/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/crtdefs.h",
+		"/C/MinGW/include/stdio.h",
+		"/C/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/exception"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"__has_feature",
+			"__has_features",
+			"\");\n",
+			"\n",
+			"console",
+			"Hello World"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Fabio/Projects/angie/include/angie.platform.hpp",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 242.0
+	},
+	"output.clang_static_analyzer":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 209.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true
+}
