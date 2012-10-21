@@ -92,6 +92,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Fabio/Downloads/glfx-0.51/include/glfx.h",
 		"/C/Users/Fabio/Projects/angie/inc/angie.platform.hpp",
 		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
@@ -317,7 +318,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.526610644258,
 			1.0
 		],
 		"rows":
