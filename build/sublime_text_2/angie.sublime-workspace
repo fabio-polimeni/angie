@@ -11,14 +11,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Users/Fabio/Projects/angie/include/angie.platform.hpp",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -92,6 +84,15 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/config/eaplatform.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/config/eacompilertraits.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/config/eacompiler.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/eabase.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/internal/config.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/contrib/example/example.cpp",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/vector.h",
+		"/C/Users/Fabio/Projects/angie/include/angie.platform.hpp",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/src/string.cpp",
 		"/C/Users/Fabio/Downloads/glfx-0.51/include/glfx.h",
 		"/C/Users/Fabio/Projects/angie/inc/angie.platform.hpp",
 		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
@@ -210,9 +211,7 @@
 		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/main.hx",
 		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Alignment/Base File.sublime-settings",
 		"/C/MinGW/include/stdlib.h",
-		"/C/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/crtdefs.h",
-		"/C/MinGW/include/stdio.h",
-		"/C/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/exception"
+		"/C/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/crtdefs.h"
 	],
 	"find":
 	{
@@ -220,9 +219,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Users\\Fabio\\Projects\\angie\\deps\\eastl\\include"
 		]
 	},
 	"find_state":
@@ -230,6 +230,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"EA_COMPILER_IS_CPLUSPLUS_11_ENABLED",
+			"EA_COMPILER_HAS_VARIADIC_TEMPLATES",
 			"__has_feature",
 			"__has_features",
 			"\");\n",
@@ -253,35 +255,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Users/Fabio/Projects/angie/include/angie.platform.hpp",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		},
 		{
@@ -365,6 +340,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 181.0,
+	"side_bar_width": 275.0,
 	"status_bar_visible": true
 }
