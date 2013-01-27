@@ -11,10 +11,50 @@
 			"path": "/C/Users/Fabio/Projects/angie/source"
 		},
 		{
-			"path": "/C/Users/Fabio/Projects/angie/impl"
-		},
-		{
 			"path": "/C/Users/Fabio/Projects/angie/deps"
 		}
-	]
+	],
+
+	"settings":
+	{
+		"sublimeclang_additional_language_options":
+		{
+			"c++": [ "-std=c++11" ]
+		},
+	
+		"sublimeclang_debug_options": true,
+		"sublimeclang_inhibit_sublime_completions": true,
+	
+		"sublimeclang_options":
+		[
+			"-m32",
+			"-D_X86_=1",
+
+			"-D__MINGW32__=1",
+			"-D__MSVCRT__=1",
+
+			"-D__GNUC__=4",
+			"-D__GNUC_MINOR__=7",
+			"-D__GNUC_PATCHLEVEL__=1",
+			"-D__GXX_ABI_VERSION__=1002",
+
+			"-D__STDC_VERSION__=201112L",
+
+			"-nostdinc",
+
+			"-IC:\\Users\\Fabio\\Projects\\angie\\include",
+			"-IC:\\Users\\Fabio\\Projects\\angie\\deps\\boost\\libs",
+			"-IC:\\Users\\Fabio\\Projects\\angie\\deps\\eastl\\include",
+			"-IC:\\Users\\Fabio\\Projects\\angie\\deps\\glm",
+			"-IC:\\Users\\Fabio\\Projects\\angie\\deps\\oglplus\\include",
+			
+			"-isystem", "C:\\MinGW\\lib\\gcc\\mingw32\\4.7.0\\include",
+			"-isystem", "C:\\MinGW\\lib\\gcc\\mingw32\\4.7.0\\include\\c++",
+			"-isystem", "C:\\MinGW\\lib\\gcc\\mingw32\\4.7.0\\include\\c++\\mingw32",
+			"-isystem", "C:\\MinGW\\include",
+			
+			"-Wall",
+			"-Wno-unknown-pragmas"
+		]
+	}
 }

@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"str",
+				"string"
+			],
+			[
+				"e",
+				"eINFO	angie::report::type"
+			],
+			[
+				"strin",
+				"string8	typedef"
+			],
+			[
+				"s",
+				"string"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"ANI",
+				"ANGIE_WARNASERROR	macro"
+			],
+			[
+				"r",
+				"report	class"
+			],
+			[
+				"re",
+				"report"
+			],
+			[
 				"n",
 				"next"
 			]
@@ -11,13 +43,91 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/Users/Fabio/Projects/angie/include/angie/report.hpp",
+			"settings":
+			{
+				"buffer_size": 1803,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Fabio/Projects/angie/include/angie/types.hpp",
+			"settings":
+			{
+				"buffer_size": 867,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Fabio/Projects/angie/include/angie/string.hpp",
+			"settings":
+			{
+				"buffer_size": 1589,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "angie.sublime-project",
+			"settings":
+			{
+				"buffer_size": 1301,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Fabio/Projects/angie/include/angie/impl/report.ipp",
+			"settings":
+			{
+				"buffer_size": 2354,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Fabio/Projects/angie/include/angie/config.hpp",
+			"settings":
+			{
+				"buffer_size": 1633,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control:\n---------------\n\n  Package Control 1.6.0 Changelog:\n  \n  Wow! It has been 9 months since the last stable release of Package Control.\n  Quite a lot has happened since then, including the release of Sublime Text 2\n  stable, and hundreds upon hundreds of new packages from the community!\n  \n  A quick thank you to Kevin Yank (@sentience) for recently volunteering to help\n  review packages for inclusion in the default channel, and ninj0x\n  (https://github.com/ninj0x) for rewriting the Package Control Community\n  Packages search functionality so it is nice and fast once again! The lists\n  below include specific thanks for code contributions.\n  \n  As Sublime Text has become increasingly more popular, and the number of\n  packages has increased so rapidly, the bandwidth requirements have also\n  significantly increased. This month the default channel will very likely serve\n  over 1TB of JSON data. If you feel so inclined, consider pitching in a small\n  amount to help cover the cost:\n  http://wbond.net/sublime_packages/package_control/say_thanks. A big thank you\n  to all of the users who have already contributed!\n  \n  \n  Enhancements\n  \n  \n   - Added full (custom) proxy authentication support for HTTPS connections\n  \n   - Added NTLM authentication for proxies on Windows\n  \n   - Proxy authentication information is now set via the new proxy_username and\n     proxy_password settings.\n  \n   - If the https_proxy setting it set to false, it will not inherit from the\n     http_proxy setting (thanks planardothum!)\n  \n   - The time of the last successful run is no longer stored in\n     Packages/User/Package Control.sublime-settings, but rather in\n     Packages/User/Package Control.last-run making it easier to ignore via git,\n     hg, etc. (thanks schlamar!)\n  \n   - Packages are now ignored during install and upgrade to help prevents errors\n     where Sublime Text tries to read a file as it is being extracted\n  \n   - Packages that include DLLs for Windows can now be upgraded. In-use\n     DLLs will be detected and the user prompted to restart.\n  \n   - Package version numbers may now include non-numeric components, and semantic\n     versioning (http://semver.org) is fully supported\n  \n   - JSON parsing messages are now printed to the console instead of being shown\n     in an error popup\n  \n   - Added support for changes to the BitBucket API\n  \n   - Added support for changes to GitHub URLs\n  \n   - Added the debug setting to help track down HTTP connection issues\n  \n   - All of the downloaders will now try to use HTTP compression\n  \n   - All of the downloaders will now follow redirects\n  \n   - Added new install_missing setting to control if Package Control should try\n     to install any packages that appear to be missing from the current machine.\n     This defaults to true, and is really only useful if you want to prevent\n     Package Control from connecting to the internet without explicitly asking\n     it to.\n  \n   - Added lots of code comments as a first step towards making contributions\n     by other developers easier\n  \n  \n  Bug Fixes\n  \n  \n   - Added support for the new preferences filename (thanks titoBouzout!)\n  \n   - If a package is missing from a machine, but not available for that\n     platform, it is no longer considered an error (thanks schlamar!)\n  \n   - Updated CA certs\n  \n   - Fixed handling of install and upgrade messages that contain non-ASCII\n     characters\n  \n   - Fixed a unicode error trying to load the CA cert bundle file on Windows when\n     the install path to Sublime Text contains non-ASCII characters\n  \n   - Better handling for edge case HTTP errors (thanks tgecho!)\n  \n   - Fixed a number of errors related to non-ASCII error messages being created\n     by the operating system (thanks quarnster!)\n  \n   - GitHub URLs will now automatically be trimmed of trailing .git suffixes\n  \n   - Badly formatted messages.json files will no longer break the install process\n",
+			"settings":
+			{
+				"buffer_size": 3999,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 127.0,
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Bookmarks: Clear All"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"packa",
 				"Package Control: Remove Package"
@@ -84,14 +194,43 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Fabio/Projects/angie/include/angie/impl/report.ipp",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/C/Users/Fabio/Downloads/MjgIntelFluidDemo/Core/Math/mat4.h",
+		"/C/Users/Fabio/Projects/angie/include/angie/types.hpp",
+		"/C/Users/Fabio/Projects/angie/include/angie/string.hpp",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/internal/config.h",
+		"/C/MinGW/include/ctype.h",
+		"/C/MinGW/include/_mingw.h",
+		"/C/Users/Fabio/Projects/angie/build/sublime_text_2/angie.sublime-project",
+		"/C/MinGW/msys/1.0/home/Fabio/clang/lib/clang/3.1/include/limits.h",
+		"/C/MinGW/msys/1.0/home/Fabio/clang/lib/clang/3.1/include/avx2intrin.h",
+		"/C/MinGW/msys/1.0/home/Fabio/clang/lib/clang/3.1/include/stdarg.h",
+		"/C/MinGW/msys/1.0/home/Fabio/clang/lib/clang/3.1/include/varargs.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/string.h",
+		"/C/MinGW/lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/c++config.h",
+		"/C/MinGW/include/wchar.h",
+		"/C/MinGW/lib/gcc/mingw32/4.7.0/include/c++/cwchar",
+		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeGDB/SublimeGDB.sublime-settings",
+		"/C/Users/Fabio/Projects/angie/include/angie/report.hpp",
+		"/C/Users/Fabio/Projects/angie/include/angie/config.hpp",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/allocator.h",
+		"/C/Users/Fabio/Projects/angie/include/report.hpp",
+		"/C/Users/Fabio/Projects/angie/include/config.hpp",
+		"/C/Users/Fabio/Projects/angie/include/types.hpp",
+		"/C/Users/Fabio/Projects/angie/impl/angie.report.ipp",
+		"/C/Users/Fabio/Projects/angie/include/angie.types.hpp",
+		"/C/MinGW/lib/gcc/mingw32/4.7.0/include/c++/cstdint",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/internal/type_fundamental.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/functional.h",
+		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/eabase.h",
+		"/C/Users/Fabio/Projects/angie/include/angie.platform.hpp",
+		"/C/Users/Fabio/Downloads/triangle/triangle.h",
 		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/config/eaplatform.h",
 		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/config/eacompilertraits.h",
 		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/config/eacompiler.h",
-		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EABase/eabase.h",
-		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/internal/config.h",
 		"/C/Users/Fabio/Projects/angie/deps/eastl/contrib/example/example.cpp",
 		"/C/Users/Fabio/Projects/angie/deps/eastl/include/EASTL/vector.h",
-		"/C/Users/Fabio/Projects/angie/include/angie.platform.hpp",
 		"/C/Users/Fabio/Projects/angie/deps/eastl/src/string.cpp",
 		"/C/Users/Fabio/Downloads/glfx-0.51/include/glfx.h",
 		"/C/Users/Fabio/Projects/angie/inc/angie.platform.hpp",
@@ -135,7 +274,6 @@
 		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/impl/context.hpp",
 		"/C/Users/Fabio/Downloads/asio-1.5.3/include/asio/ssl/detail/openssl_init.hpp",
 		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/src/main.cpp",
-		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
 		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
 		"/C/MinGW/lib/gcc/mingw32/4.7.0/include/c++/type_traits",
 		"/C/Users/Fabio/Projects/develop/yan/framework/source/yan.window.cpp",
@@ -145,9 +283,7 @@
 		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/Default.sublime-keymap",
 		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket.cpp",
 		"/C/MinGW/include/wctype.h",
-		"/C/MinGW/lib/gcc/mingw32/4.7.0/include/c++/cwchar",
 		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_platform.h",
-		"/C/MinGW/include/ctype.h",
 		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket.h",
 		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/socket_comm_ssh.cpp",
 		"/C/Users/Fabio/Downloads/rudesocket-1.2.0/rudesocket-1.2.0/src/rude_socketimpl.h",
@@ -185,33 +321,7 @@
 		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/PPMallocEAWebKit/local/include/PPMalloc/EAStackAllocator.h",
 		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/libpngEAWebKit/local/include/libpng12/pngconf.h",
 		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/EAWebKitSupportPackages/libpngEAWebKit/local/include/libpng12/png.h",
-		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/include/EAWebKit/internal/icu/include/common/unicode/utf8.h",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/synch/util/features.h",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/acestl/memory/message_block_functions.hpp",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/acestl/network/socket_functions.hpp",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/platformstl.hpp",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/performance/performance_counter.hpp",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/synch/atomic_types.h",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/filesystem/path.hpp",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/wtlstl/wtlstl.hpp",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/atlstl/window/window.hpp",
-		"/C/Users/Fabio/Downloads/stlsoft-1.9.111/include/platformstl/platformstl.h",
-		"/C/Users/Fabio/Downloads/collada-dom-2.4.0/dom/src/modules/LIBXMLPlugin/daeLIBXMLPlugin.cpp",
-		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Terminal/Terminal.sublime-settings",
-		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/User/Terminal.sublime-settings",
-		"/C/peanut/winplot.exe",
-		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES2/OGLES2AlphaTest.cpp",
-		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES2/Content/Wallwire.cpp",
-		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES3/OGLES3AlphaTest.cpp",
-		"/C/Imagination/PowerVR/GraphicsSDK/SDK_3.0/Examples/Intermediate/AlphaTest/OGLES2/Content/VertShader.cpp",
-		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/compile.hxml",
-		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/Main.js",
-		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/Main.hx",
-		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/Hello.n",
-		"/C/Users/Fabio/Projects/haxe/tests/examples/Hello World/main.hx",
-		"/C/Users/Fabio/AppData/Roaming/Sublime Text 2/Packages/Alignment/Base File.sublime-settings",
-		"/C/MinGW/include/stdlib.h",
-		"/C/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/crtdefs.h"
+		"/C/Users/Fabio/Downloads/eawebkit_nfsworld_1.26.00/include/EAWebKit/internal/icu/include/common/unicode/utf8.h"
 	],
 	"find":
 	{
@@ -219,9 +329,12 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"<open files>",
+			"<open folders>",
+			"",
 			"C:\\Users\\Fabio\\Projects\\angie\\deps\\eastl\\include"
 		]
 	},
@@ -230,6 +343,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"_pctype_dll",
+			"__MSVCRT__",
+			"__MINGW32__",
+			"_GLIBCXX_HAVE_WCHAR_H",
+			"_GLIBCXX_USE_WCHAR_T",
+			"_GLIBCXX_PURE",
+			"_GLIBCXX_USE_WCHAR_T",
+			"//#",
+			">\n",
+			"{\n",
+			"report_type",
 			"EA_COMPILER_IS_CPLUSPLUS_11_ENABLED",
 			"EA_COMPILER_HAS_VARIADIC_TEMPLATES",
 			"__has_feature",
@@ -246,7 +370,7 @@
 		"replace_history":
 		[
 		],
-		"reverse": false,
+		"reverse": true,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -255,13 +379,203 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Fabio/Projects/angie/include/angie/report.hpp",
+					"settings":
+					{
+						"buffer_size": 1803,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1691,
+								1691
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Fabio/Projects/angie/include/angie/types.hpp",
+					"settings":
+					{
+						"buffer_size": 867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Fabio/Projects/angie/include/angie/string.hpp",
+					"settings":
+					{
+						"buffer_size": 1589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1222,
+								1222
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 168.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 3,
+					"file": "angie.sublime-project",
+					"settings":
+					{
+						"buffer_size": 1301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								485,
+								485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Fabio/Projects/angie/include/angie/impl/report.ipp",
+					"settings":
+					{
+						"buffer_size": 2354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								426,
+								426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 126.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Fabio/Projects/angie/include/angie/config.hpp",
+					"settings":
+					{
+						"buffer_size": 1633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								596,
+								596
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 168.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 3999,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3999,
+								3999
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -305,7 +619,7 @@
 	"menu_visible": true,
 	"output.clang":
 	{
-		"height": 242.0
+		"height": 174.0
 	},
 	"output.clang_static_analyzer":
 	{
@@ -333,6 +647,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/C/Users/Fabio/Projects/angie/build/sublime_text_2/angie.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
