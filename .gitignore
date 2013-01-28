@@ -1,0 +1,11 @@
+# git ignore file
+/build/msvc11/angie/x64
+/build/msvc11/angie/Check
+/build/msvc11/angie/Debug
+/build/msvc11/angie/Release
+/build/msvc11/angie/tests
+/utilities/glLoadGen_1_0_4
+/build/msvc11/angie/angie/x64
+/build/msvc11/angie/angie/Check
+/build/msvc11/angie/angie/Debug
+/build/msvc11/angie/angie/Release
