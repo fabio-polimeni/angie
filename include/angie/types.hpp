@@ -16,7 +16,9 @@
 
 #include <cstdint>
 
+#ifndef char_t
 typedef	char char_t;
+#endif
 
 namespace std
 {

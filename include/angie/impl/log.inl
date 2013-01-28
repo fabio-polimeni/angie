@@ -4,16 +4,10 @@
 #include <iostream>
 #include <functional>
 #include <string>
+#include <thread>
 
 #include <angie/log.hpp>
-
-// TODO:
-//	0.	Make it thread safe!
-//	1.	We can catch any \n in the message and add a \t, or
-//		any kind of identifier, to each line before printing.
-//	2.	On platforms, such as Windows, we can catach if
-//		a debugger is attached, and print the message to
-//		it, instead of printing to the standard output.
+#include <angie/debugger.hpp>
 
 namespace angie
 {
@@ -21,7 +15,17 @@ namespace angie
 	{
 		std::function< void (std::string message) > handler = [](std::string message)
 		{
-			std::cout << message << std::endl;
+			static std::mutex s_log_mutex;
+			std::lock_guard<std::mutex> log_lock(s_log_mutex);
+
+			if ( debugger::present() )
+			{
+				debugger::write( message );
+			}
+			else
+			{
+				std::cout << message << std::endl;
+			}
 		};
 	}
 }

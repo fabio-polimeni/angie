@@ -62,6 +62,20 @@
 #	endif
 #endif
 
+/// Platform identifications
+#define ANGIE_WIN		0x01
+#define ANGIE_WIN32		0x02
+#define ANGIE_WIN64		0x04
+
+/// Very simple platform identification
+#if defined(_MSC_VER) || defined(_WIN32) || defined(_WIN64)
+#	if defined(_WIN64)
+#		define ANGIE_PLATFORM ANGIE_WIN | ANGIE_WIN64
+#	else
+#		define ANGIE_PLATFORM ANGIE_WIN | ANGIE_WIN32
+#	endif
+#endif
+
 /// Namespace definition
 namespace angie
 {
