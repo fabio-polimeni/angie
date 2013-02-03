@@ -46,7 +46,7 @@ namespace angie
 	}
 }
 #else
-#	include <angie/impl/report.inl>
+#	include <angie/report.inl>
 #endif  // ANGIE_HADER_ONLY
 
 /// Namespace definition
@@ -67,10 +67,6 @@ namespace angie
         return report::handle( report::type::eINFO, true, "", "", "", -1, message);
     }
 } // angie
-
-#if ANGIE_HEADER_ONLY
-#	include <angie/impl/report.inl>
-#endif  // ANGIE_HADER_ONLY
 
 #define angie_error_msg( expr, msg ) \
 	angie::report::handle( angie::report::type::eCRTIICAL, (expr), (#expr), __FUNCTION__, __FILE__, __LINE__, (msg) )

@@ -4,9 +4,6 @@
     <Filter Include="inc">
       <UniqueIdentifier>{af53fb06-0371-4188-b026-3639dc688ead}</UniqueIdentifier>
     </Filter>
-    <Filter Include="impl">
-      <UniqueIdentifier>{b490e6bb-eb5f-4e7d-bd86-88b961e498be}</UniqueIdentifier>
-    </Filter>
     <Filter Include="win">
       <UniqueIdentifier>{2ef3a079-0374-49ad-b1ef-934857827767}</UniqueIdentifier>
     </Filter>
@@ -41,15 +38,15 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\include\angie\impl\report.inl">
-      <Filter>impl</Filter>
-    </None>
     <None Include="angie.props" />
-    <None Include="..\..\..\..\include\angie\impl\log.inl">
-      <Filter>impl</Filter>
-    </None>
     <None Include="..\..\..\..\include\angie\win\debugger.inl">
       <Filter>win</Filter>
+    </None>
+    <None Include="..\..\..\..\include\angie\log.inl">
+      <Filter>inc</Filter>
+    </None>
+    <None Include="..\..\..\..\include\angie\report.inl">
+      <Filter>inc</Filter>
     </None>
   </ItemGroup>
 </Project>

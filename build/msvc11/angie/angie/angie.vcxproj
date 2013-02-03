@@ -201,8 +201,8 @@
     <ClInclude Include="..\..\..\..\include\angie\win\includes.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\include\angie\impl\log.inl" />
-    <None Include="..\..\..\..\include\angie\impl\report.inl" />
+    <None Include="..\..\..\..\include\angie\log.inl" />
+    <None Include="..\..\..\..\include\angie\report.inl" />
     <None Include="..\..\..\..\include\angie\win\debugger.inl" />
     <None Include="angie.props" />
   </ItemGroup>

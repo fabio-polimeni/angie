@@ -28,7 +28,7 @@ namespace angie
 	}
 }
 #else
-#	include <angie/impl/log.inl>
+#	include <angie/log.inl>
 #endif  // ANGIE_HADER_ONLY
 
 namespace angie
