@@ -33,7 +33,7 @@ namespace angie
 		explicit Exception( const std::string message )
 			: m_Message(message) { }
 
-		virtual const char* what( void ) const
+		virtual const char* what( void ) const throw()
 		{
 			return m_Message.c_str();
 		}
