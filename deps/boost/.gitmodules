@@ -1,0 +1,336 @@
+[submodule "libs/accumulators"]
+	path = libs/accumulators
+	url = git://github.com/boost-lib/accumulators.git
+[submodule "libs/algorithm"]
+	path = libs/algorithm
+	url = git://github.com/boost-lib/algorithm.git
+[submodule "libs/any"]
+	path = libs/any
+	url = git://github.com/boost-lib/any.git
+[submodule "libs/array"]
+	path = libs/array
+	url = git://github.com/boost-lib/array.git
+[submodule "libs/asio"]
+	path = libs/asio
+	url = git://github.com/boost-lib/asio.git
+[submodule "libs/assign"]
+	path = libs/assign
+	url = git://github.com/boost-lib/assign.git
+[submodule "libs/atomic"]
+	path = libs/atomic
+	url = git://github.com/boost-lib/atomic.git
+[submodule "libs/bimap"]
+	path = libs/bimap
+	url = git://github.com/boost-lib/bimap.git
+[submodule "libs/bind"]
+	path = libs/bind
+	url = git://github.com/boost-lib/bind.git
+[submodule "libs/chrono"]
+	path = libs/chrono
+	url = git://github.com/boost-lib/chrono.git
+[submodule "libs/circular_buffer"]
+	path = libs/circular_buffer
+	url = git://github.com/boost-lib/circular_buffer.git
+[submodule "libs/compatibility"]
+	path = libs/compatibility
+	url = git://github.com/boost-lib/compatibility.git
+[submodule "libs/concept_check"]
+	path = libs/concept_check
+	url = git://github.com/boost-lib/concept_check.git
+[submodule "libs/config"]
+	path = libs/config
+	url = git://github.com/boost-lib/config.git
+[submodule "libs/conversion"]
+	path = libs/conversion
+	url = git://github.com/boost-lib/conversion.git
+[submodule "libs/core"]
+	path = libs/core
+	url = git://github.com/boost-lib/core.git
+[submodule "libs/crc"]
+	path = libs/crc
+	url = git://github.com/boost-lib/crc.git
+[submodule "libs/date_time"]
+	path = libs/date_time
+	url = git://github.com/boost-lib/date_time.git
+[submodule "libs/disjoint_sets"]
+	path = libs/disjoint_sets
+	url = git://github.com/boost-lib/disjoint_sets.git
+[submodule "libs/dynamic_bitset"]
+	path = libs/dynamic_bitset
+	url = git://github.com/boost-lib/dynamic_bitset.git
+[submodule "libs/exception"]
+	path = libs/exception
+	url = git://github.com/boost-lib/exception.git
+[submodule "libs/filesystem"]
+	path = libs/filesystem
+	url = git://github.com/boost-lib/filesystem.git
+[submodule "libs/flyweight"]
+	path = libs/flyweight
+	url = git://github.com/boost-lib/flyweight.git
+[submodule "libs/foreach"]
+	path = libs/foreach
+	url = git://github.com/boost-lib/foreach.git
+[submodule "libs/format"]
+	path = libs/format
+	url = git://github.com/boost-lib/format.git
+[submodule "libs/function"]
+	path = libs/function
+	url = git://github.com/boost-lib/function.git
+[submodule "libs/function_types"]
+	path = libs/function_types
+	url = git://github.com/boost-lib/function_types.git
+[submodule "libs/functional"]
+	path = libs/functional
+	url = git://github.com/boost-lib/functional.git
+[submodule "libs/functional_hash"]
+	path = libs/functional_hash
+	url = git://github.com/boost-lib/functional_hash.git
+[submodule "libs/fusion"]
+	path = libs/fusion
+	url = git://github.com/boost-lib/fusion.git
+[submodule "libs/geometry"]
+	path = libs/geometry
+	url = git://github.com/boost-lib/geometry.git
+[submodule "libs/gil"]
+	path = libs/gil
+	url = git://github.com/boost-lib/gil.git
+[submodule "libs/graph"]
+	path = libs/graph
+	url = git://github.com/boost-lib/graph.git
+[submodule "libs/graph_parallel"]
+	path = libs/graph_parallel
+	url = git://github.com/boost-lib/graph_parallel.git
+[submodule "libs/icl"]
+	path = libs/icl
+	url = git://github.com/boost-lib/icl.git
+[submodule "libs/integer"]
+	path = libs/integer
+	url = git://github.com/boost-lib/integer.git
+[submodule "libs/interprocess"]
+	path = libs/interprocess
+	url = git://github.com/boost-lib/interprocess.git
+[submodule "libs/intrusive"]
+	path = libs/intrusive
+	url = git://github.com/boost-lib/intrusive.git
+[submodule "libs/io"]
+	path = libs/io
+	url = git://github.com/boost-lib/io.git
+[submodule "libs/iostreams"]
+	path = libs/iostreams
+	url = git://github.com/boost-lib/iostreams.git
+[submodule "libs/iterator"]
+	path = libs/iterator
+	url = git://github.com/boost-lib/iterator.git
+[submodule "libs/lambda"]
+	path = libs/lambda
+	url = git://github.com/boost-lib/lambda.git
+[submodule "libs/logic"]
+	path = libs/logic
+	url = git://github.com/boost-lib/logic.git
+[submodule "libs/math"]
+	path = libs/math
+	url = git://github.com/boost-lib/math.git
+[submodule "libs/move"]
+	path = libs/move
+	url = git://github.com/boost-lib/move.git
+[submodule "libs/mpi"]
+	path = libs/mpi
+	url = git://github.com/boost-lib/mpi.git
+[submodule "libs/mpl"]
+	path = libs/mpl
+	url = git://github.com/boost-lib/mpl.git
+[submodule "libs/msm"]
+	path = libs/msm
+	url = git://github.com/boost-lib/msm.git
+[submodule "libs/multi_array"]
+	path = libs/multi_array
+	url = git://github.com/boost-lib/multi_array.git
+[submodule "libs/multi_index"]
+	path = libs/multi_index
+	url = git://github.com/boost-lib/multi_index.git
+[submodule "libs/optional"]
+	path = libs/optional
+	url = git://github.com/boost-lib/optional.git
+[submodule "libs/parameter"]
+	path = libs/parameter
+	url = git://github.com/boost-lib/parameter.git
+[submodule "libs/phoenix"]
+	path = libs/phoenix
+	url = git://github.com/boost-lib/phoenix.git
+[submodule "libs/polygon"]
+	path = libs/polygon
+	url = git://github.com/boost-lib/polygon.git
+[submodule "libs/pool"]
+	path = libs/pool
+	url = git://github.com/boost-lib/pool.git
+[submodule "libs/preprocessor"]
+	path = libs/preprocessor
+	url = git://github.com/boost-lib/preprocessor.git
+[submodule "libs/program_options"]
+	path = libs/program_options
+	url = git://github.com/boost-lib/program_options.git
+[submodule "libs/property_map"]
+	path = libs/property_map
+	url = git://github.com/boost-lib/property_map.git
+[submodule "libs/property_tree"]
+	path = libs/property_tree
+	url = git://github.com/boost-lib/property_tree.git
+[submodule "libs/proto"]
+	path = libs/proto
+	url = git://github.com/boost-lib/proto.git
+[submodule "libs/ptr_container"]
+	path = libs/ptr_container
+	url = git://github.com/boost-lib/ptr_container.git
+[submodule "libs/python"]
+	path = libs/python
+	url = git://github.com/boost-lib/python.git
+[submodule "libs/random"]
+	path = libs/random
+	url = git://github.com/boost-lib/random.git
+[submodule "libs/range"]
+	path = libs/range
+	url = git://github.com/boost-lib/range.git
+[submodule "libs/ratio"]
+	path = libs/ratio
+	url = git://github.com/boost-lib/ratio.git
+[submodule "libs/rational"]
+	path = libs/rational
+	url = git://github.com/boost-lib/rational.git
+[submodule "libs/regex"]
+	path = libs/regex
+	url = git://github.com/boost-lib/regex.git
+[submodule "libs/scope_exit"]
+	path = libs/scope_exit
+	url = git://github.com/boost-lib/scope_exit.git
+[submodule "libs/serialization"]
+	path = libs/serialization
+	url = git://github.com/boost-lib/serialization.git
+[submodule "libs/signals"]
+	path = libs/signals
+	url = git://github.com/boost-lib/signals.git
+[submodule "libs/signals2"]
+	path = libs/signals2
+	url = git://github.com/boost-lib/signals2.git
+[submodule "libs/smart_ptr"]
+	path = libs/smart_ptr
+	url = git://github.com/boost-lib/smart_ptr.git
+[submodule "libs/spirit"]
+	path = libs/spirit
+	url = git://github.com/boost-lib/spirit.git
+[submodule "libs/statechart"]
+	path = libs/statechart
+	url = git://github.com/boost-lib/statechart.git
+[submodule "libs/static_assert"]
+	path = libs/static_assert
+	url = git://github.com/boost-lib/static_assert.git
+[submodule "libs/system"]
+	path = libs/system
+	url = git://github.com/boost-lib/system.git
+[submodule "libs/test"]
+	path = libs/test
+	url = git://github.com/boost-lib/test.git
+[submodule "libs/thread"]
+	path = libs/thread
+	url = git://github.com/boost-lib/thread.git
+[submodule "libs/timer"]
+	path = libs/timer
+	url = git://github.com/boost-lib/timer.git
+[submodule "libs/tokenizer"]
+	path = libs/tokenizer
+	url = git://github.com/boost-lib/tokenizer.git
+[submodule "libs/tr1"]
+	path = libs/tr1
+	url = git://github.com/boost-lib/tr1.git
+[submodule "libs/tuple"]
+	path = libs/tuple
+	url = git://github.com/boost-lib/tuple.git
+[submodule "libs/type_traits"]
+	path = libs/type_traits
+	url = git://github.com/boost-lib/type_traits.git
+[submodule "libs/typeof"]
+	path = libs/typeof
+	url = git://github.com/boost-lib/typeof.git
+[submodule "libs/units"]
+	path = libs/units
+	url = git://github.com/boost-lib/units.git
+[submodule "libs/unordered"]
+	path = libs/unordered
+	url = git://github.com/boost-lib/unordered.git
+[submodule "libs/utility"]
+	path = libs/utility
+	url = git://github.com/boost-lib/utility.git
+[submodule "libs/uuid"]
+	path = libs/uuid
+	url = git://github.com/boost-lib/uuid.git
+[submodule "libs/variant"]
+	path = libs/variant
+	url = git://github.com/boost-lib/variant.git
+[submodule "libs/wave"]
+	path = libs/wave
+	url = git://github.com/boost-lib/wave.git
+[submodule "libs/xpressive"]
+	path = libs/xpressive
+	url = git://github.com/boost-lib/xpressive.git
+[submodule "tools/bcp"]
+	path = tools/bcp
+	url = git://github.com/boost-lib/bcp.git
+[submodule "tools/boostbook"]
+	path = tools/boostbook
+	url = git://github.com/boost-lib/boostbook.git
+[submodule "tools/build"]
+	path = tools/build
+	url = git://github.com/boost-lib/build.git
+[submodule "tools/inspect"]
+	path = tools/inspect
+	url = git://github.com/boost-lib/inspect.git
+[submodule "tools/litre"]
+	path = tools/litre
+	url = git://github.com/boost-lib/litre.git
+[submodule "tools/quickbook"]
+	path = tools/quickbook
+	url = git://github.com/boost-lib/quickbook.git
+[submodule "tools/auto_index"]
+	path = tools/auto_index
+	url = git://github.com/boost-lib/auto_index.git
+[submodule "libs/locale"]
+	path = libs/locale
+	url = git://github.com/boost-lib/locale.git
+[submodule "libs/container"]
+	path = libs/container
+	url = git://github.com/boost-lib/container.git
+[submodule "libs/tti"]
+	path = libs/tti
+	url = git://github.com/boost-lib/tti.git
+[submodule "libs/heap"]
+	path = libs/heap
+	url = git://github.com/boost-lib/heap.git
+[submodule "libs/context"]
+	path = libs/context
+	url = git://github.com/boost-lib/context.git
+[submodule "libs/local_function"]
+	path = libs/local_function
+	url = git://github.com/boost-lib/local_function.git
+[submodule "libs/lockfree"]
+	path = libs/lockfree
+	url = git://github.com/boost-lib/lockfree.git
+[submodule "libs/spirit_classic"]
+	path = libs/spirit_classic
+	url = git://github.com/boost-lib/spirit_classic.git
+[submodule "libs/coroutine"]
+	path = libs/coroutine
+	url = git://github.com/boost-lib/coroutine.git
+[submodule "libs/multiprecision"]
+	path = libs/multiprecision
+	url = git://github.com/boost-lib/multiprecision.git
+[submodule "libs/numeric/conversion"]
+	path = libs/numeric/conversion
+	url = git://github.com/boost-lib/numeric_conversion.git
+[submodule "libs/numeric/interval"]
+	path = libs/numeric/interval
+	url = git://github.com/boost-lib/interval.git
+[submodule "libs/numeric/odeint"]
+	path = libs/numeric/odeint
+	url = git://github.com/boost-lib/odeint.git
+[submodule "libs/numeric/ublas"]
+	path = libs/numeric/ublas
+	url = git://github.com/boost-lib/ublas.git
