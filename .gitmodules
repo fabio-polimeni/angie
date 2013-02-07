@@ -10,3 +10,6 @@
 [submodule "deps/boost"]
 	path = deps/boost
 	url = git://github.com/boost-lib/boost.git
+[submodule "deps/gli"]
+	path = deps/gli
+	url = git://github.com/g-truc/gli.git
