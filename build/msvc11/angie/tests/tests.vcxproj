@@ -170,6 +170,7 @@
     <ClCompile Include="..\..\..\..\tests\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\tests\inc\bitfield_tests.hpp" />
     <ClInclude Include="..\..\..\..\tests\inc\test_simple.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

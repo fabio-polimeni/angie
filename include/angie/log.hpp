@@ -2,18 +2,18 @@
 #define ANGIE_LOG_HPP
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Copyright (c) 2012 Fabio Polimeni										///
+/// Copyright (c) 2012 Fabio Polimeni										
 ///////////////////////////////////////////////////////////////////////////////
-/// Created : 2013-01-22													///
-/// Updated : 																///
-/// Licence : This source is under MIT License								///
-/// File    : log.hpp 														///
+/// Created : 2013-01-22													
+/// Updated : 																
+/// Licence : This source is under MIT License								
+/// File    : log.hpp 														
 ///////////////////////////////////////////////////////////////////////////////
-/// Description:															///
-///																			///
-///	Log output handler. By default it prints the message to the standard	///
-///	output, but we use an handler, that is, the user can catch any message	///
-///	and act according.														///
+/// Description:															
+///																			
+///	Log output handler. By default it prints the message to the standard	
+///	output, but we use an handler, that is, the user can catch any message	
+///	and act according.														
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <angie/config.hpp>

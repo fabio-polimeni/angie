@@ -17,5 +17,8 @@
     <ClInclude Include="..\..\..\..\tests\inc\test_simple.hpp">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\tests\inc\bitfield_tests.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

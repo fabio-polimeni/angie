@@ -39,6 +39,9 @@
     <ClInclude Include="..\..\..\..\include\angie\win\includes.hpp">
       <Filter>win</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\include\angie\bitfield.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="angie.props" />

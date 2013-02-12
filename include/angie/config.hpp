@@ -62,6 +62,12 @@
 #	endif
 #endif
 
+#ifndef noexcept
+#	ifdef _MSC_VER
+#		define noexcept _NOEXCEPT
+#	endif
+#endif
+
 /// Platform identifications
 #define ANGIE_WIN		0x01
 #define ANGIE_WIN32		0x02

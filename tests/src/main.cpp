@@ -13,20 +13,22 @@
 #include <exception>
 
 #include <angie/test.hpp>
+
 #include "test_simple.hpp"
+#include "bitfield_tests.hpp"
 
 
 int main( int argc, const char* argv[] )
 {
 	try
 	{
-		angie::test::Simple simple_test;
+		angie::test::BitfieldTests bitfield_tests;
 
-		std::vector<const angie::test::Unit> basic_set;
-		basic_set.push_back(simple_test);
+		std::vector<const angie::test::Unit> container_set;
+		container_set.push_back(bitfield_tests);
 
-		angie::test::Result basic_result = angie::test::suite("Basic Tests",basic_set);
-		angie::output( basic_result._message );
+		angie::test::Result container_result = angie::test::suite("Container Tests",container_set);
+		angie::output( container_result._message );
 	}
 	catch( std::exception& e )
 	{

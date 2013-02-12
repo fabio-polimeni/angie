@@ -25,7 +25,8 @@ namespace angie
 			Simple( void ) : Unit( "Simple Test", [](std::vector<const Result>& results)
 			{
 				angie_test_check(results,1 != 0,"This is a simple success story.");
-				angie_test_check(results,1 == 0,"This is a poor story.");
+				
+				//angie_test_check(results,1 == 0,"This is a poor story.");
 			}) { }
 		};
 	}

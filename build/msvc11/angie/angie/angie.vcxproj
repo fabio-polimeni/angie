@@ -190,6 +190,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\angie\bitfield.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\config.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\debugger.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\exception.hpp" />
