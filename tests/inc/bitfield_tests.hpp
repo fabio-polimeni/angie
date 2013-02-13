@@ -1,3 +1,6 @@
+#ifndef ANGIE_BITFIELDTESTS_HPP
+#define ANGIE_BITFIELDTESTS_HPP
+
 ///////////////////////////////////////////////////////////////////////////////
 /// Copyright (c) 2012 Fabio Polimeni										
 ///////////////////////////////////////////////////////////////////////////////
@@ -66,7 +69,13 @@ namespace angie
 				angie_test_check(results,in_and_out.Has(InOut::eIN) && in_and_out.Has(InOut::eOUT),
 					"The bitfiled should have set both InOut::In && InOut::Out");
 
+				auto none_bf(in_and_out & (InOut::eOUT));
+				angie_test_check(results,none_bf.Any(),
+					"The bitfiled should have set both InOut::In && InOut::Out");
+
 			}) { }
 		};
 	}
 }
+
+#endif // ANGIE_BITFIELDTESTS_HPP

@@ -6,7 +6,7 @@
 /// Licence : This source is under MIT License
 /// File    : main.cpp
 ///////////////////////////////////////////////////////////////////////////////
-/// Test main.
+/// Example main
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <string>
@@ -14,21 +14,13 @@
 
 #include <angie/test.hpp>
 
-#include "test_simple.hpp"
-#include "bitfield_tests.hpp"
-
+#include "example.hpp"
 
 int main( int argc, const char* argv[] )
 {
 	try
 	{
-		angie::test::BitfieldTests bitfield_tests;
-
-		std::vector<const angie::test::Unit> container_set;
-		container_set.push_back(bitfield_tests);
-
-		angie::test::Result container_result = angie::test::suite("Container Tests",container_set);
-		angie::output( container_result._message );
+		
 	}
 	catch( std::exception& e )
 	{

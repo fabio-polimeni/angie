@@ -95,6 +95,20 @@ namespace angie
 	}
 
 	template< typename T > inline
+	Bitfield<T> operator&(T left, const Bitfield<T>& right) noexcept
+	{
+		Bitfield<T> ans(left);
+		return (ans &= right);
+	}
+
+	template< typename T > inline
+	Bitfield<T> operator&(const Bitfield<T>& left, T right) noexcept
+	{
+		Bitfield<T> ans(left);
+		return (ans &= right);
+	}
+
+	template< typename T > inline
 	Bitfield<T> operator|(const Bitfield<T>& left, const Bitfield<T>& right) noexcept
 	{
 		Bitfield<T> ans(left);
@@ -109,6 +123,20 @@ namespace angie
 	}
 
 	template< typename T > inline
+	Bitfield<T> operator|(T left, const Bitfield<T>& right) noexcept
+	{
+		Bitfield<T> ans(left);
+		return (ans |= right);
+	}
+
+	template< typename T > inline
+	Bitfield<T> operator|(const Bitfield<T>& left, T right) noexcept
+	{
+		Bitfield<T> ans(left);
+		return (ans |= right);
+	}
+
+	template< typename T > inline
 	Bitfield<T> operator^(const Bitfield<T>& left, const Bitfield<T>& right) noexcept
 	{
 		Bitfield<T> ans(left);
@@ -117,6 +145,20 @@ namespace angie
 
 	template< typename T > inline
 	Bitfield<T> operator^(T left, T right) noexcept
+	{
+		Bitfield<T> ans(left);
+		return (ans ^= right);
+	}
+
+	template< typename T > inline
+	Bitfield<T> operator^(T left, const Bitfield<T>& right) noexcept
+	{
+		Bitfield<T> ans(left);
+		return (ans ^= right);
+	}
+
+	template< typename T > inline
+	Bitfield<T> operator^(const Bitfield<T>& left, T right) noexcept
 	{
 		Bitfield<T> ans(left);
 		return (ans ^= right);
