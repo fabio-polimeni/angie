@@ -12,7 +12,7 @@
 /build/msvc11/angie/tests/Check
 /build/msvc11/angie/tests/Debug
 /build/msvc11/angie/tests/Release
-/build/msvc11/angie/example_00/x64
-/build/msvc11/angie/example_00/Check
-/build/msvc11/angie/example_00/Debug
-/build/msvc11/angie/example_00/Release
+/build/msvc11/angie/examples/example_00/x64
+/build/msvc11/angie/examples/example_00/Check
+/build/msvc11/angie/examples/example_00/Debug
+/build/msvc11/angie/examples/example_00/Release

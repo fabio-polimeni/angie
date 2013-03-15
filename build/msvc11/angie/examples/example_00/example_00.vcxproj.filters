@@ -11,16 +11,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\examples\simple\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\examples\commons\example.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\examples\commons\main_window.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\examples\commons\example.hpp">
-      <Filter>inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\examples\commons\main_window.hpp">
-      <Filter>inc</Filter>
-    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\examples\simple\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
