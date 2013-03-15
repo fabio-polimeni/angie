@@ -39,6 +39,7 @@ namespace angie
 		}
 
 	}; // Exception
+
 } // angie
 
 #endif //ANGIE_EXCEPTION_HPP

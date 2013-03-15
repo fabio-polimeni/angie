@@ -11,6 +11,7 @@
 
 #include <string>
 #include <exception>
+#include <memory>
 
 #include <angie/test.hpp>
 
@@ -20,7 +21,8 @@ int main( int argc, const char* argv[] )
 {
 	try
 	{
-		
+		std::unique_ptr<Example> example( new Example );
+		example->run(argc,argv);
 	}
 	catch( std::exception& e )
 	{

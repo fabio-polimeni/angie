@@ -16,7 +16,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\examples\common\example.hpp">
+    <ClInclude Include="..\..\..\..\examples\commons\example.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\examples\commons\main_window.hpp">
       <Filter>inc</Filter>
     </ClInclude>
   </ItemGroup>

@@ -53,7 +53,7 @@ namespace angie
 				text_line = string::format<512>(
 					"INFO:\t%s\n\tFunction - %s\n\tFile - %s : %d\n",
 					message, func_name, file_name, line_num );
-				std::cout << text_line << std::endl;
+				angie::output(text_line);
 				return true;
 			
 			default: return false;

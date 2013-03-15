@@ -1,11 +1,18 @@
 # git ignore file
+/utilities/glLoadGen_1_0_4
 /build/msvc11/angie/x64
 /build/msvc11/angie/Check
 /build/msvc11/angie/Debug
 /build/msvc11/angie/Release
-/build/msvc11/angie/tests
-/utilities/glLoadGen_1_0_4
 /build/msvc11/angie/angie/x64
 /build/msvc11/angie/angie/Check
 /build/msvc11/angie/angie/Debug
 /build/msvc11/angie/angie/Release
+/build/msvc11/angie/tests/x64
+/build/msvc11/angie/tests/Check
+/build/msvc11/angie/tests/Debug
+/build/msvc11/angie/tests/Release
+/build/msvc11/angie/example_00/x64
+/build/msvc11/angie/example_00/Check
+/build/msvc11/angie/example_00/Debug
+/build/msvc11/angie/example_00/Release

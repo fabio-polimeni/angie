@@ -1,5 +1,5 @@
-#ifndef ANGIE_WIN_DEBUGGER_HPP
-#define ANGIE_WIN_DEBUGGER_HPP
+#ifndef ANGIE_WIN_DEBUGGER_INL
+#define ANGIE_WIN_DEBUGGER_INL
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Copyright (c) 2012 Fabio Polimeni										///
@@ -48,4 +48,4 @@ namespace angie
 	}
 }
 
-#endif // ANGIE_WIN_DEBUGGER_HPP
+#endif // ANGIE_WIN_DEBUGGER_INL

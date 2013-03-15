@@ -46,17 +46,17 @@ namespace angie
 				angie_test_check(results,in_bf == InOut::eIN,
 					"The bitfiled expected to be equal to InOut::In");
 
-				angie_test_check(results,in_bf.Has(InOut::eIN),
+				angie_test_check(results,in_bf.has(InOut::eIN),
 					"The bitfiled should have the InOut::In bit set to 1");
 
 				angie::Bitfield<InOut> out_bf(InOut::eOUT);
 				
 				out_bf |= InOut::eNONE;
-				angie_test_check(results,out_bf.Has(InOut::eNONE),
+				angie_test_check(results,out_bf.has(InOut::eNONE),
 					"The bitfiled should have the InOut::eNONE bit set to 1");
 
 				out_bf &= ~angie::Bitfield<InOut>(InOut::eNONE);
-				angie_test_check(results,!out_bf.Has(InOut::eNONE),
+				angie_test_check(results,!out_bf.has(InOut::eNONE),
 					"The bitfiled shouldn't have the InOut::eNONE bit set to 1");
 
 				angie::Bitfield<InOut> in_to_out(InOut::eIN);
@@ -66,11 +66,11 @@ namespace angie
 					"The bitfiled expected to be equal to InOut::In");
 
 				angie::Bitfield<InOut> in_and_out(InOut::eIN | InOut::eOUT);
-				angie_test_check(results,in_and_out.Has(InOut::eIN) && in_and_out.Has(InOut::eOUT),
+				angie_test_check(results,in_and_out.has(InOut::eIN) && in_and_out.has(InOut::eOUT),
 					"The bitfiled should have set both InOut::In && InOut::Out");
 
 				auto none_bf(in_and_out & (InOut::eOUT));
-				angie_test_check(results,none_bf.Any(),
+				angie_test_check(results,none_bf.any(),
 					"The bitfiled should have set both InOut::In && InOut::Out");
 
 			}) { }

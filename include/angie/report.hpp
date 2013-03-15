@@ -79,6 +79,6 @@ namespace angie
 #define angie_warning( expr ) angie_warning_msg(expr,"")
 
 #define angie_info( msg ) \
-	angie::report::handle( angie::report::type::eINFO, true, __FUNCTION__, __FILE__, __LINE__, -1, (msg) )
+	angie::report::handle( angie::report::type::eINFO, true, "", __FUNCTION__, __FILE__,  __LINE__, (msg) )
 
 #endif // ANGIE_REPORT_HPP

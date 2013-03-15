@@ -10,6 +10,9 @@
     <Filter Include="gui">
       <UniqueIdentifier>{9f9cb326-3185-480a-8978-67e2e07db712}</UniqueIdentifier>
     </Filter>
+    <Filter Include="gui\win">
+      <UniqueIdentifier>{43626244-fb8a-4a3a-bfab-581a094dbff1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\include\angie\config.hpp">
@@ -42,6 +45,15 @@
     <ClInclude Include="..\..\..\..\include\angie\bitfield.hpp">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\include\angie\singleton.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\angie\gui\window.hpp">
+      <Filter>gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\angie\application.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="angie.props" />
@@ -53,6 +65,12 @@
     </None>
     <None Include="..\..\..\..\include\angie\report.inl">
       <Filter>inc</Filter>
+    </None>
+    <None Include="..\..\..\..\include\angie\gui\win\window.inl">
+      <Filter>gui\win</Filter>
+    </None>
+    <None Include="..\..\..\..\include\angie\win\application.inl">
+      <Filter>win</Filter>
     </None>
   </ItemGroup>
 </Project>

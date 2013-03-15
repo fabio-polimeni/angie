@@ -162,7 +162,8 @@
     <ClCompile Include="..\..\..\..\examples\simple\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\examples\common\example.hpp" />
+    <ClInclude Include="..\..\..\..\examples\commons\example.hpp" />
+    <ClInclude Include="..\..\..\..\examples\commons\main_window.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
