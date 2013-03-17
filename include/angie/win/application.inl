@@ -15,6 +15,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include <angie/config.hpp>
 #include <angie/report.hpp>
+#include <angie/application.hpp>
 #include <angie/win/includes.hpp>
 
 namespace angie
@@ -52,7 +53,6 @@ namespace angie
 							if (msg.message == WM_QUIT)
 							{
 								app->exit();
-								break;
 							}
 							else
 							{
@@ -60,11 +60,13 @@ namespace angie
 								DispatchMessage(&msg);
 							}
 						}
-						// If we don't have a message to process
-						else
-						{
-							app->onTick();
-						}  
+						
+						// We give the opportunity to check
+						// from the on-tick function, if this
+						// is going to be the last frame before
+						// exit te main loop. Just check
+						// Application::isExitRequested().
+						app->onTick();
 					}
 
 					app->m_States &= ~State::eRUNNING;
@@ -74,10 +76,6 @@ namespace angie
 
 		};
 	} // win
-
-	// Expose Window interface
-	typedef win::ApplicationHandler Application;
-
 } // angie
 
 #endif // ANGIE_GUI_WIN_WINDOW_INL

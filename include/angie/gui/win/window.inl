@@ -45,8 +45,9 @@ namespace angie
 						
 							if ( win )
 							{
-								win->onCreate();
 								SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)win);
+								win->m_HWND = hWnd;
+								win->onCreate();
 							}
 
 							break;
@@ -54,13 +55,31 @@ namespace angie
 					
 					case  WM_DISPLAYCHANGE:
 						if ( win == nullptr ) break;
-						if ( win->m_States.has(State::eFULLSCREEN ) )
+						if ( win->m_States.has(State::eFULLSCREEN) )
 						{
-							win->onFullscreen((uint32_t)LOWORD(lParam), (uint32_t)HIWORD(lParam));
+							win->m_States &= ~State::eFULLSCREEN;
 						}
 						else
 						{
-							win->onResize((uint32_t)LOWORD(lParam), (uint32_t)HIWORD(lParam));
+							win->m_States |= State::eFULLSCREEN;
+							
+							// We can't relay on the following code, because
+							// if the fullscreen happened on a display device
+							// different from the default one, than these information
+							// is not what we want to communicate.
+							//uint32_t width = (uint32_t)LOWORD(lParam);
+							//uint32_t height = (uint32_t)HIWORD(lParam);
+
+							DEVMODE devMode;
+							ZeroMemory(&devMode,sizeof(DEVMODE));
+							devMode.dmSize = sizeof(DEVMODE);
+
+							// Get current display settings for the default display device.
+							EnumDisplaySettings(win->m_fsDevice.DeviceName,ENUM_CURRENT_SETTINGS,&devMode);
+							uint32_t width = (uint32_t)devMode.dmPelsWidth;
+							uint32_t height = (uint32_t)devMode.dmPelsHeight;
+
+							win->onFullscreen(width,height);
 						}
 						break;
 
@@ -88,9 +107,9 @@ namespace angie
 
 					case WM_SIZE:
 						if ( win == nullptr ) break;
-						if ( (wParam == SIZE_MAXIMIZED) || (wParam == SIZE_RESTORED) )
+						if ( (wParam == SIZE_MAXIMIZED && win->m_States.has(State::eHIDDEN)) )
 						{
-							win->m_States &= ~State::eHIDDEN;
+							win->m_States &= ~(State::eHIDDEN);
 							win->onRestore();
 						}
 						else if ( wParam == SIZE_MINIMIZED )
@@ -99,14 +118,25 @@ namespace angie
 							win->onHide();
 						}
 
-						win->onResize( (uint32_t)LOWORD(lParam), (uint32_t)HIWORD(lParam) );
+						if ( win->m_States.has(State::eFULLSCREEN) == false )
+						{
+							win->onResize( (uint32_t)LOWORD(lParam), (uint32_t)HIWORD(lParam) );
+						}
+
 						break;
 
-					case WM_WINDOWPOSCHANGED:
+					case WM_MOVE:
 						if ( win == nullptr ) break;
 						{
-							WINDOWPOS* win_pos = reinterpret_cast<WINDOWPOS*>(lParam);
-							win->onMove(win_pos->x,win_pos->y);
+							int32_t xPos = (int32_t)(short) LOWORD(lParam);   // horizontal position 
+							int32_t yPos = (int32_t)(short) HIWORD(lParam);   // vertical position 
+
+							int32_t winX = win->getX();
+							int32_t winY = win->getY();
+							if ( xPos != winX || yPos != winY )
+							{
+								win->onMove(winX,winY);
+							}
 						}
 						break;
 
@@ -126,16 +156,68 @@ namespace angie
 						}
 
 						break;
+
+					// Some default key handling
+					case WM_KEYUP:
+						if ( win == nullptr ) break;
+						if ( wParam == VK_ESCAPE )
+						{
+							win->destroy();
+						}
+						else if ( wParam == 0x46 ) // F
+						{
+							if ( win->m_States.has(State::eFULLSCREEN) )
+							{
+								win->restore();
+							}
+							else if ( win->getParent() == nullptr )
+							{
+								win->fullscreen(0,0,1);
+							}
+						}
 					}
 
 					return DefWindowProc(hWnd, message, wParam, lParam);  
 				}
 
-				WNDCLASSEX	m_WCX;
-				HWND		m_HWND;
+				WNDCLASSEX		m_WCX;
+				HWND			m_HWND;
+				DISPLAY_DEVICE	m_fsDevice;
 
 				state_type	m_States;
 				flag_type	m_Flags;
+
+				private:
+
+					DWORD getExStyle( bool has_parent ) const
+					{
+						DWORD dwExStyle = 0x0;
+						if ( !has_parent ) dwExStyle |= WS_EX_APPWINDOW;
+
+						return dwExStyle;
+					}
+
+					DWORD getStyle( bool has_parent ) const
+					{
+						DWORD dwStyle = WS_CLIPCHILDREN;
+						if ( has_parent )
+						{
+							if ( m_Flags.has(Flag::ePARENTRELATIVE) )
+							{
+								dwStyle |= WS_CHILDWINDOW;
+							}
+
+							dwStyle |= (m_Flags.has(Flag::ePOPUPWINDOW))
+								? WS_BORDER|WS_SYSMENU : WS_OVERLAPPEDWINDOW;
+						}
+						else
+						{
+							dwStyle |= (m_Flags.has(Flag::ePOPUPWINDOW))
+								? WS_POPUP|WS_SYSMENU : WS_OVERLAPPEDWINDOW;
+						}
+
+						return dwStyle;
+					}
 
 			public:
 				
@@ -178,15 +260,11 @@ namespace angie
 						m_Flags &= ~Flag::eEXITONCLOSE;
 					}
 
-					DWORD dwStyle = (flag_type(m_Flags & Flag::ePOPUPWINDOW).any() && parent == nullptr)
-						? WS_POPUPWINDOW : WS_OVERLAPPEDWINDOW;
-						
-					if ( parent ) dwStyle |= WS_CHILDWINDOW;
-
-					DWORD dwExStyle = ( parent == nullptr ) ? WS_EX_APPWINDOW : 0x0;
+					DWORD dwExStyle = getExStyle( parent != nullptr );
+					DWORD dwStyle = getStyle( parent != nullptr );
 												
 					HWND parent_hwnd = parent ? reinterpret_cast<WindowHandler*>(parent)->m_HWND : NULL;
-					m_HWND = CreateWindowEx(
+					CreateWindowEx(
 						dwExStyle,					// extended window styles
 						m_WCX.lpszClassName,		// class name
 						title.c_str(),				// window name
@@ -236,9 +314,81 @@ namespace angie
 					}
 				}
 
-				bool fullscreen( uint32_t width, uint32_t height )
+				bool fullscreen( uint32_t width = 0, uint32_t height = 0, int16_t screen = -1 )
 				{
-					m_States |= State::eFULLSCREEN;
+					if ( this->m_HWND && (width != this->getWidth() || height != this->getHeight()) )
+					{
+						// Get the nearest monitor to the window
+						MONITORINFOEX monitorInfo;
+						monitorInfo.cbSize = sizeof(MONITORINFOEX);
+						GetMonitorInfo(MonitorFromWindow(
+							m_HWND, MONITOR_DEFAULTTONEAREST),&monitorInfo);
+
+						// Now we can use the adapter to retrieve display deveces associated o it.
+						ZeroMemory(&m_fsDevice,sizeof(DISPLAY_DEVICE));
+						m_fsDevice.cb = sizeof(DISPLAY_DEVICE);
+
+						DWORD dispId = 0;
+						bool dispFound = false;
+						while ( EnumDisplayDevices(NULL,dispId++,&m_fsDevice,EDD_GET_DEVICE_INTERFACE_NAME) )
+						{
+							// We compare the display device with the screen-id, if provided,
+							// with the monitor the window lies in, otherwise.
+							if ( screen > -1 )
+							{
+								if ( screen == dispId-1 )
+								{
+									dispFound = true;
+									break;
+								}
+							}
+							else if ( strcmp(monitorInfo.szDevice,m_fsDevice.DeviceName) == 0 )
+							{
+								dispFound = true;
+								break;
+							}
+						}
+
+						if ( dispFound == false ) return false;
+
+						DEVMODE devMode;
+						ZeroMemory(&devMode,sizeof(DEVMODE));
+						devMode.dmSize = sizeof(DEVMODE);
+
+						// Get current display settings for the default display device.
+						EnumDisplaySettings(m_fsDevice.DeviceName,ENUM_CURRENT_SETTINGS,&devMode);
+						devMode.dmPelsWidth		= width > 0 ? width : getWidth();
+						devMode.dmPelsHeight	= height > 0 ? height : getHeight();
+						devMode.dmFields		= DM_PELSWIDTH | DM_PELSHEIGHT;
+
+						LONG dispChangeResult = ChangeDisplaySettingsEx(
+							m_fsDevice.DeviceName,	// Default display device
+							&devMode,				// Current display mode with resolution changes
+							NULL,					// Reserved
+							CDS_TEST,				// We just want to check now
+							NULL);					// No video parameters
+
+						if ( dispChangeResult == DISP_CHANGE_SUCCESSFUL )
+						{							
+							dispChangeResult = ChangeDisplaySettingsEx(
+								m_fsDevice.DeviceName,	// Default display device
+								&devMode,				// Current display mode with resolution changes
+								NULL,					// Reserved
+								CDS_FULLSCREEN,			// Temporarly change display settings
+								NULL);					// No video parameters
+
+							SetWindowPos(m_HWND, HWND_TOPMOST,
+								devMode.dmPosition.x, devMode.dmPosition.y,
+								devMode.dmPelsWidth, devMode.dmPelsHeight,
+								SWP_NOZORDER | SWP_NOACTIVATE | SWP_FRAMECHANGED | SWP_SHOWWINDOW);
+
+							SetWindowLongPtr(m_HWND, GWL_EXSTYLE, WS_EX_TOPMOST);
+							SetWindowLongPtr(m_HWND, GWL_STYLE, WS_POPUP | WS_VISIBLE);
+
+							return true;
+						}
+					}
+
 					return false;
 				}
 
@@ -260,16 +410,14 @@ namespace angie
 					}
 				}
 
-				bool hide( void )
+				void hide( void )
 				{
 					win::WindowHandler* win_handler = reinterpret_cast<win::WindowHandler*>(this);
 					if ( win_handler && win_handler->m_HWND )
 					{
 						m_States |= State::eHIDDEN;
-						return ShowWindow(win_handler->m_HWND,SW_HIDE) ? true : false;
+						ShowWindow(win_handler->m_HWND,SW_HIDE) ? true : false;
 					}
-
-					return false;
 				}
 
 				void restore( void )
@@ -277,15 +425,32 @@ namespace angie
 					win::WindowHandler* win_handler = reinterpret_cast<win::WindowHandler*>(this);
 					if ( win_handler && win_handler->m_HWND )
 					{
-						m_States &= ~(State::eHIDDEN|State::eFULLSCREEN);
+						// Check if it was in fullscreen, and if so, then,
+						// we need to restore display changes accordingly.
+						if ( m_States.has(State::eFULLSCREEN) )
+						{
+							const uint32_t width = this->getWidth();
+							const uint32_t height = this->getHeight();
 
-						// TODO: Check if it was in fullscreen, and if so, then,
-						//		 we need to restore display changes accordingly.
+							// Reset dispaly mode
+							//m_States &= ~State::eFULLSCREEN;
+							ChangeDisplaySettingsEx(
+								m_fsDevice.DeviceName,	// Default display device
+								NULL,					// Previous display
+								NULL,					// Reserved
+								CDS_RESET,				// We just want to check now
+								NULL);					// No video parameters
+							
+							SetWindowLongPtr(m_HWND, GWL_EXSTYLE, getExStyle(getParent() != nullptr));
+							SetWindowLongPtr(m_HWND, GWL_STYLE, getStyle(getParent() != nullptr)|WS_VISIBLE);							
+							SetWindowPos(m_HWND, HWND_NOTOPMOST, 0,0,width,height, SWP_SHOWWINDOW);
+						}
+
 						ShowWindow(win_handler->m_HWND,SW_RESTORE);
 					}
 				}
 
-				uint32_t getWidth( void ) const
+				uint32_t getClientWidth( void ) const
 				{
 					const win::WindowHandler* win_handler = reinterpret_cast<const win::WindowHandler*>(this);
 					if ( win_handler && win_handler->m_HWND )
@@ -300,7 +465,7 @@ namespace angie
 					return 0;
 				}
 
-				uint32_t getHeight( void ) const
+				uint32_t getClientHeight( void ) const
 				{
 					const win::WindowHandler* win_handler = reinterpret_cast<const win::WindowHandler*>(this);
 					if ( win_handler && win_handler->m_HWND )
@@ -314,12 +479,91 @@ namespace angie
 
 					return 0;
 				}
+
+				uint32_t getWidth( void ) const
+				{
+					if ( this->m_HWND )
+					{
+						RECT winRect;
+						if ( GetWindowRect( this->m_HWND,&winRect) )
+						{
+							return winRect.right-winRect.left;
+						}
+					}
+
+					return 0;
+				}
+
+				uint32_t getHeight( void ) const
+				{
+					if ( this->m_HWND )
+					{
+						RECT winRect;
+						if ( GetWindowRect( this->m_HWND,&winRect) )
+						{
+							return winRect.bottom-winRect.top;
+						}
+					}
+
+					return 0;
+				}
+
+				int32_t	getX( void ) const
+				{
+					if ( this->m_HWND )
+					{
+						RECT winRect;
+						if ( GetWindowRect( this->m_HWND,&winRect) )
+						{
+							return winRect.left;
+						}
+					}
+
+					return 0xffffffff;
+				}
+
+				int32_t	getY( void ) const
+				{
+					if ( this->m_HWND )
+					{
+						RECT winRect;
+						if ( GetWindowRect( this->m_HWND,&winRect) )
+						{
+							return winRect.top;
+						}
+					}
+
+					return 0xffffffff;
+				}
+
+				std::string getTitle( void ) const
+				{
+					std::string title;
+					if ( this->m_HWND )
+					{
+						TCHAR winText[128];
+						GetWindowText(this->m_HWND,winText,128);
+						title.append(winText);
+					}
+
+					return title;
+				}
+
+				WindowBase* getParent( void ) const
+				{
+					if ( this->m_HWND )
+					{
+						HWND parentHwnd = GetParent(this->m_HWND);
+						if ( parentHwnd )
+						{
+							return reinterpret_cast<WindowBase*>(GetWindowLongPtr(parentHwnd,GWLP_USERDATA));
+						}
+					}
+
+					return nullptr;
+				}
 			};
 		} // win
-
-		// Expose Window interface
-		typedef win::WindowHandler Window;
-
 	} // gui
 } // angie
 

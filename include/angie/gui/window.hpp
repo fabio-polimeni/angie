@@ -37,7 +37,8 @@ namespace angie
 			{
 				eEXITONCLOSE	= 0,	// If set, exit the application when close this window
 				ePAINTONREQUEST	= 1,	// If set, paint() function must be called by the user explicitely
-				ePOPUPWINDOW	= 2		// No menu or border frames
+				ePOPUPWINDOW	= 2,	// No menu or border frames
+				ePARENTRELATIVE	= 3		// Child client rectangle will be relative to its parent
 			};
 
 			typedef Bitfield<State> state_type;
@@ -74,13 +75,25 @@ namespace angie
 
 			virtual void move( int32_t x, int32_t y )					= 0;
 			virtual void resize( uint32_t width, uint32_t height )		= 0;
-			virtual bool fullscreen( uint32_t width, uint32_t height )	= 0;
+			virtual bool fullscreen(
+				uint32_t width, uint32_t height, int16_t screen = -1 )	= 0;
+
 			virtual void paint( bool paint_children )					= 0;
-			virtual bool hide( void )									= 0;
+			virtual void hide( void )									= 0;
 			virtual void restore( void )								= 0;
 			
+			virtual uint32_t getClientWidth( void ) const				= 0;
+			virtual uint32_t getClientHeight( void ) const				= 0;
+
 			virtual uint32_t getWidth( void ) const						= 0;
 			virtual uint32_t getHeight( void ) const					= 0;
+
+			virtual int32_t	getX( void ) const							= 0;
+			virtual int32_t	getY( void ) const							= 0;
+
+			virtual std::string getTitle( void ) const					= 0;
+
+			virtual WindowBase* getParent( void ) const					= 0;
 			
 		};
 	}
@@ -91,5 +104,12 @@ namespace angie
 #		include <angie/gui/win/window.inl>
 #	endif
 #endif
+
+// Expose Window interface
+namespace angie { namespace gui {
+#if ANGIE_PLATFORM & ANGIE_WIN
+	typedef win::WindowHandler Window;
+#endif
+} }
 
 #endif // ANGIE_WINDOW_HPP

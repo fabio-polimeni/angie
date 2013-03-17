@@ -66,6 +66,9 @@ namespace angie
 		bool any( void ) const { return m_Bitset.any(); }
 		bool none( void ) const { return m_Bitset.none(); }
 
+		bool all( const Bitfield& other ) const { return (*this & other) == other; }
+		bool any( const Bitfield& other ) const { return (*this & other).any(); }
+
 		bool has( T value ) const { return m_Bitset.test(static_cast<size_t>(value)); }
 
 		bool operator==( const Bitfield& rhs ) const { return m_Bitset == rhs.m_Bitset; }

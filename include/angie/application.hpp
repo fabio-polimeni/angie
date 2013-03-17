@@ -55,6 +55,8 @@ namespace angie
 						
 		virtual void run( int32_t arg_c, const char* arg_v[] ) { }
 		void exit( void ) { m_States |= State::eEXITREQUESTED; }
+
+		bool isExitRequested( void ) const { return m_States.has(State::eEXITREQUESTED); }
 	};
 }
 
@@ -63,5 +65,12 @@ namespace angie
 #		include <angie/win/application.inl>
 #	endif
 #endif
+
+// Expose Application interface
+namespace angie {
+#if ANGIE_PLATFORM & ANGIE_WIN
+	typedef win::ApplicationHandler Application;
+#endif
+}
 
 #endif // ANGIE_WINDOW_HPP
