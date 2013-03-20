@@ -4,9 +4,9 @@
 #include <angie/config.hpp>
 #include <angie/report.hpp>
 #include <angie/string.hpp>
-#include <angie/gui/window.hpp>
+#include <angie/window.hpp>
 
-class MyWindow : public angie::gui::Window
+class MyWindow : public angie::Window
 {
 
 private:
@@ -55,8 +55,8 @@ private:
 
 public:
 
-	MyWindow( angie::gui::Window::flag_type ft )
-		: angie::gui::Window(ft) { }
+	MyWindow( angie::Window::flag_type ft )
+		: angie::Window(ft) { }
 	
 	~MyWindow( void ) { }
 

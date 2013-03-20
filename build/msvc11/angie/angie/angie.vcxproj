@@ -195,21 +195,21 @@
     <ClInclude Include="..\..\..\..\include\angie\config.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\debugger.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\exception.hpp" />
-    <ClInclude Include="..\..\..\..\include\angie\gui\window.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\singleton.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\log.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\report.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\string.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\test.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\types.hpp" />
+    <ClInclude Include="..\..\..\..\include\angie\window.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\win\includes.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\include\angie\gui\win\window.inl" />
     <None Include="..\..\..\..\include\angie\log.inl" />
     <None Include="..\..\..\..\include\angie\report.inl" />
     <None Include="..\..\..\..\include\angie\win\application.inl" />
     <None Include="..\..\..\..\include\angie\win\debugger.inl" />
+    <None Include="..\..\..\..\include\angie\win\window.inl" />
     <None Include="angie.props" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
