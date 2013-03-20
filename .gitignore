@@ -1,5 +1,5 @@
 # git ignore file
-/utilities/glLoadGen_1_0_4
+/utilities
 /build/msvc11/angie/x64
 /build/msvc11/angie/Check
 /build/msvc11/angie/Debug
