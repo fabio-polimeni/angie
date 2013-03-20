@@ -3,7 +3,7 @@
 	url = git://github.com/paulhodge/EASTL.git
 [submodule "deps/oglplus"]
 	path = deps/oglplus
-	url = git://oglplus.git.sourceforge.net/gitroot/oglplus/oglplus
+	url = git://github.com/matus-chochlik/oglplus.git
 [submodule "deps/glm"]
 	path = deps/glm
 	url = git://github.com/g-truc/glm.git
