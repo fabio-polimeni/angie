@@ -20,10 +20,10 @@
 
 namespace angie
 {
-	ApplicationBase* ApplicationBase::m_Instance = nullptr;
+	application_base* application_base::m_Instance = nullptr;
 	namespace win
 	{
-		class ApplicationHandler : public ApplicationBase
+		class application_handler : public application_base
 		{
 		
 		private:
@@ -34,16 +34,16 @@ namespace angie
 
 			void run( int32_t arg_c, const char* arg_v[] )
 			{
-				ApplicationHandler* app = reinterpret_cast<ApplicationHandler*>(ApplicationBase::get());
+				application_handler* app = reinterpret_cast<application_handler*>(application_base::get());
 				if ( app == nullptr ) return;
 		
 				// Get the the application handler
 				app->m_Hinstance = GetModuleHandle(arg_v[0]);
-				app->m_States |= State::eINITIALISED;
+				app->m_States |= state::eINITIALISED;
 				if ( app->onInit( arg_c, arg_v ) )
 				{
-					app->m_States |= State::eRUNNING;
-					while ( !app->m_States.has(State::eEXITREQUESTED) )
+					app->m_States |= state::eRUNNING;
+					while ( !app->m_States.has(state::eEXITREQUESTED) )
 					{
 						MSG msg;
 
@@ -64,12 +64,12 @@ namespace angie
 						// We give the opportunity to check
 						// from the on-tick function, if this
 						// is going to be the last frame before
-						// exit te main loop. Just check
+						// exit the main loop. Just check
 						// Application::isExitRequested().
 						app->onTick();
 					}
 
-					app->m_States &= ~State::eRUNNING;
+					app->m_States &= ~state::eRUNNING;
 					app->onRelease();
 				}
 			}

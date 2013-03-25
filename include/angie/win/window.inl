@@ -6,7 +6,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Created : 2013-03-10													///
 /// Updated : 																///
-/// Licence : This source is under MIT License								///
+/// License : This source is under MIT License								///
 /// File    : window.inl 													///
 ///////////////////////////////////////////////////////////////////////////////
 /// Description:															///
@@ -25,7 +25,7 @@ namespace angie
 {
 	namespace win
 	{
-		class WindowHandler : public WindowBase
+		class window_handler : public window_base
 		{
 
 		private:
@@ -33,13 +33,13 @@ namespace angie
 			implement static
 			LRESULT CALLBACK proc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			{
-				WindowHandler* win = reinterpret_cast<WindowHandler*>(GetWindowLongPtr(hWnd,GWLP_USERDATA));
+				window_handler* win = reinterpret_cast<window_handler*>(GetWindowLongPtr(hWnd,GWLP_USERDATA));
 				switch (message)
 				{
 				case  WM_CREATE:
 					{
 						CREATESTRUCT *pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);
-						win = reinterpret_cast<WindowHandler*>(pCreate->lpCreateParams);
+						win = reinterpret_cast<window_handler*>(pCreate->lpCreateParams);
 						
 						if ( win )
 						{
@@ -53,13 +53,13 @@ namespace angie
 					
 				case  WM_DISPLAYCHANGE:
 					if ( win == nullptr ) break;
-					if ( win->m_States.has(State::eFULLSCREEN) )
+					if ( win->m_States.has(state::eFULLSCREEN) )
 					{
-						win->m_States &= ~State::eFULLSCREEN;
+						win->m_States &= ~state::eFULLSCREEN;
 					}
 					else
 					{
-						win->m_States |= State::eFULLSCREEN;
+						win->m_States |= state::eFULLSCREEN;
 							
 						// We can't relay on the following code, because
 						// if the fullscreen happened on a display device
@@ -85,38 +85,38 @@ namespace angie
 				case WM_PAINT:
 				case WM_SYNCPAINT:
 					if ( win == nullptr ) break;
-					if ( win->m_States.has(State::eTOPAINT) )
+					if ( win->m_States.has(state::eTOPAINT) )
 					{
 						// If the user paint is active, then, the window's painting
 						// must be requested, in order to generate a paint callback.
-						if ( win->m_Flags.has(Flag::ePAINTONREQUEST) )
+						if ( win->m_Flags.has(flag::ePAINTONREQUEST) )
 						{
 							win->onPaint();
-							win->m_States &= ~State::eTOPAINT;
+							win->m_States &= ~state::eTOPAINT;
 						}
 					}
 					else
 					{
 						// If the user paint is not active, we generate a
-						// paint callback whenever we recieve a paint message.
+						// paint callback whenever we receive a paint message.
 						win->onPaint();
 					}
 					break;
 
 				case WM_SIZE:
 					if ( win == nullptr ) break;
-					if ( (wParam == SIZE_MAXIMIZED && win->m_States.has(State::eHIDDEN)) )
+					if ( (wParam == SIZE_MAXIMIZED && win->m_States.has(state::eHIDDEN)) )
 					{
-						win->m_States &= ~(State::eHIDDEN);
+						win->m_States &= ~(state::eHIDDEN);
 						win->onRestore();
 					}
 					else if ( wParam == SIZE_MINIMIZED )
 					{
-						win->m_States |= State::eHIDDEN;
+						win->m_States |= state::eHIDDEN;
 						win->onHide();
 					}
 
-					if ( win->m_States.has(State::eFULLSCREEN) == false )
+					if ( win->m_States.has(state::eFULLSCREEN) == false )
 					{
 						win->onResize( (uint32_t)LOWORD(lParam), (uint32_t)HIWORD(lParam) );
 					}
@@ -148,7 +148,7 @@ namespace angie
 					win->onDestroy();
 					SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)NULL);
 						
-					if ( win->m_Flags.has(Flag::eEXITONCLOSE) )
+					if ( win->m_Flags.has(flag::eEXITONCLOSE) )
 					{	
 						PostQuitMessage(0);
 					}
@@ -164,7 +164,7 @@ namespace angie
 					}
 					else if ( wParam == 0x46 ) // F
 					{
-						if ( win->m_States.has(State::eFULLSCREEN) )
+						if ( win->m_States.has(state::eFULLSCREEN) )
 						{
 							win->restore();
 						}
@@ -200,17 +200,17 @@ namespace angie
 					DWORD dwStyle = WS_CLIPCHILDREN;
 					if ( has_parent )
 					{
-						if ( m_Flags.has(Flag::ePARENTRELATIVE) )
+						if ( m_Flags.has(flag::ePARENTRELATIVE) )
 						{
 							dwStyle |= WS_CHILDWINDOW;
 						}
 
-						dwStyle |= (m_Flags.has(Flag::ePOPUPWINDOW))
+						dwStyle |= (m_Flags.has(flag::ePOPUPWINDOW))
 							? WS_BORDER|WS_SYSMENU : WS_OVERLAPPEDWINDOW;
 					}
 					else
 					{
-						dwStyle |= (m_Flags.has(Flag::ePOPUPWINDOW))
+						dwStyle |= (m_Flags.has(flag::ePOPUPWINDOW))
 							? WS_POPUP|WS_SYSMENU : WS_OVERLAPPEDWINDOW;
 					}
 
@@ -219,13 +219,13 @@ namespace angie
 
 		public:
 				
-			explicit WindowHandler( flag_type flags = Flag::eEXITONCLOSE )
-				: WindowBase(flags), m_HWND(NULL), m_Flags(flags)
+			explicit window_handler( flag_type flags = flag::eEXITONCLOSE )
+				: window_base(flags), m_HWND(NULL), m_Flags(flags)
 			{
 				ZeroMemory(&m_WCX,sizeof(WNDCLASSEX));
 				m_WCX.cbSize = sizeof(WNDCLASSEX);
 				m_WCX.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC | CS_DBLCLKS;
-				m_WCX.lpfnWndProc = (WNDPROC)WindowHandler::proc;
+				m_WCX.lpfnWndProc = (WNDPROC)window_handler::proc;
 				m_WCX.cbClsExtra = 0;
 				m_WCX.cbWndExtra = 0;  
 				m_WCX.hInstance = GetModuleHandle(NULL);
@@ -243,25 +243,25 @@ namespace angie
 				RegisterClassEx( &m_WCX );
 			}
 
-			virtual ~WindowHandler( void )
+			virtual ~window_handler( void )
 			{
 				destroy();
 			}
 
 			void create( std::string title,
 				uint32_t width, uint32_t height,
-				WindowBase* parent = nullptr )
+				window_base* parent = nullptr )
 			{
 				if ( parent )
 				{
 					// Only main windows can request an application to exit.
-					m_Flags &= ~Flag::eEXITONCLOSE;
+					m_Flags &= ~flag::eEXITONCLOSE;
 				}
 
 				DWORD dwExStyle = getExStyle( parent != nullptr );
 				DWORD dwStyle = getStyle( parent != nullptr );
 												
-				HWND parent_hwnd = parent ? reinterpret_cast<WindowHandler*>(parent)->m_HWND : NULL;
+				HWND parent_hwnd = parent ? reinterpret_cast<window_handler*>(parent)->m_HWND : NULL;
 				CreateWindowEx(
 					dwExStyle,					// extended window styles
 					m_WCX.lpszClassName,		// class name
@@ -296,7 +296,7 @@ namespace angie
 
 			void move( int32_t x, int32_t y )
 			{
-				win::WindowHandler* win_handler = reinterpret_cast<win::WindowHandler*>(this);
+				win::window_handler* win_handler = reinterpret_cast<win::window_handler*>(this);
 				if ( win_handler && win_handler->m_HWND )
 				{
 					SetWindowPos(win_handler->m_HWND,HWND_TOP,(int)x,(int)y,0,0,(SWP_NOSIZE|SWP_SHOWWINDOW));
@@ -305,7 +305,7 @@ namespace angie
 
 			void resize( uint32_t width, uint32_t height )
 			{
-				win::WindowHandler* win_handler = reinterpret_cast<win::WindowHandler*>(this);
+				win::window_handler* win_handler = reinterpret_cast<win::window_handler*>(this);
 				if ( win_handler && win_handler->m_HWND )
 				{
 					SetWindowPos(win_handler->m_HWND,HWND_TOP,0,0,(int)width,(int)height,(SWP_NOMOVE|SWP_SHOWWINDOW));
@@ -322,7 +322,7 @@ namespace angie
 					GetMonitorInfo(MonitorFromWindow(
 						m_HWND, MONITOR_DEFAULTTONEAREST),&monitorInfo);
 
-					// Now we can use the adapter to retrieve display deveces associated o it.
+					// Now we can use the adapter to retrieve display devices associated o it.
 					ZeroMemory(&m_fsDevice,sizeof(DISPLAY_DEVICE));
 					m_fsDevice.cb = sizeof(DISPLAY_DEVICE);
 
@@ -372,7 +372,7 @@ namespace angie
 							m_fsDevice.DeviceName,	// Default display device
 							&devMode,				// Current display mode with resolution changes
 							NULL,					// Reserved
-							CDS_FULLSCREEN,			// Temporarly change display settings
+							CDS_FULLSCREEN,			// Temporarily change display settings
 							NULL);					// No video parameters
 
 						SetWindowPos(m_HWND, HWND_TOPMOST,
@@ -392,9 +392,9 @@ namespace angie
 
 			void paint( bool paint_children = true )
 			{
-				win::WindowHandler* win_handler = reinterpret_cast<win::WindowHandler*>(this);
+				win::window_handler* win_handler = reinterpret_cast<win::window_handler*>(this);
 				if ( win_handler && win_handler->m_HWND
-					&& win_handler->m_Flags.has(Flag::ePAINTONREQUEST) )
+					&& win_handler->m_Flags.has(flag::ePAINTONREQUEST) )
 				{
 					UINT flags = RDW_UPDATENOW | RDW_INTERNALPAINT | RDW_VALIDATE;
 					if ( paint_children )
@@ -403,35 +403,35 @@ namespace angie
 					}
 
 					// WM_PAINT
-					m_States |= State::eTOPAINT;
+					m_States |= state::eTOPAINT;
 					RedrawWindow(win_handler->m_HWND, NULL, NULL, flags);
 				}
 			}
 
 			void hide( void )
 			{
-				win::WindowHandler* win_handler = reinterpret_cast<win::WindowHandler*>(this);
+				win::window_handler* win_handler = reinterpret_cast<win::window_handler*>(this);
 				if ( win_handler && win_handler->m_HWND )
 				{
-					m_States |= State::eHIDDEN;
+					m_States |= state::eHIDDEN;
 					ShowWindow(win_handler->m_HWND,SW_HIDE) ? true : false;
 				}
 			}
 
 			void restore( void )
 			{
-				win::WindowHandler* win_handler = reinterpret_cast<win::WindowHandler*>(this);
+				win::window_handler* win_handler = reinterpret_cast<win::window_handler*>(this);
 				if ( win_handler && win_handler->m_HWND )
 				{
 					// Check if it was in fullscreen, and if so, then,
 					// we need to restore display changes accordingly.
-					if ( m_States.has(State::eFULLSCREEN) )
+					if ( m_States.has(state::eFULLSCREEN) )
 					{
 						const uint32_t width = this->getWidth();
 						const uint32_t height = this->getHeight();
 
-						// Reset dispaly mode
-						//m_States &= ~State::eFULLSCREEN;
+						// Reset display mode
+						//m_States &= ~state::eFULLSCREEN;
 						ChangeDisplaySettingsEx(
 							m_fsDevice.DeviceName,	// Default display device
 							NULL,					// Previous display
@@ -450,7 +450,7 @@ namespace angie
 
 			uint32_t getClientWidth( void ) const
 			{
-				const win::WindowHandler* win_handler = reinterpret_cast<const win::WindowHandler*>(this);
+				const win::window_handler* win_handler = reinterpret_cast<const win::window_handler*>(this);
 				if ( win_handler && win_handler->m_HWND )
 				{
 					RECT clientRect;
@@ -465,7 +465,7 @@ namespace angie
 
 			uint32_t getClientHeight( void ) const
 			{
-				const win::WindowHandler* win_handler = reinterpret_cast<const win::WindowHandler*>(this);
+				const win::window_handler* win_handler = reinterpret_cast<const win::window_handler*>(this);
 				if ( win_handler && win_handler->m_HWND )
 				{
 					RECT clientRect;
@@ -547,14 +547,14 @@ namespace angie
 				return title;
 			}
 
-			WindowBase* getParent( void ) const
+			window_base* getParent( void ) const
 			{
 				if ( this->m_HWND )
 				{
 					HWND parentHwnd = GetParent(this->m_HWND);
 					if ( parentHwnd )
 					{
-						return reinterpret_cast<WindowBase*>(GetWindowLongPtr(parentHwnd,GWLP_USERDATA));
+						return reinterpret_cast<window_base*>(GetWindowLongPtr(parentHwnd,GWLP_USERDATA));
 					}
 				}
 

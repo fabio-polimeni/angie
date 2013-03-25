@@ -22,26 +22,26 @@
 namespace angie
 {
 	template < typename TYPE >
-	class Singleton
+	class singleton
 	{
 		
 	private:
 
 		// Prevent copying/assignment.
-		Singleton( const Singleton & );
-		Singleton &operator = ( const Singleton & );
+		singleton( const singleton & );
+		singleton &operator = ( const singleton & );
 
 	protected:
 
 		static TYPE* m_Instance;
 
-		Singleton( void )
+		singleton( void )
 		{
 			angie_error_msg( !TYPE::m_Instance, "An instance of this singleton class already exists!" );
 			m_Instance = static_cast< TYPE* >( this );
 		}
 
-		virtual ~Singleton( void ) { m_Instance = nullptr; }
+		virtual ~singleton( void ) { m_Instance = nullptr; }
 
 	public:
 		

@@ -25,7 +25,7 @@
 namespace angie
 {
 	template < typename T >
-	class Bitfield
+	class bitfield
 	{
 		
 	public:
@@ -41,12 +41,12 @@ namespace angie
 
 		bitset_t m_Bitset;
 
-		Bitfield( const bitset_t& bs ) : m_Bitset(bs) { }
+		bitfield( const bitset_t& bs ) : m_Bitset(bs) { }
 
 	public:
 
-		Bitfield( void ) : m_Bitset(static_cast<underlying_t>(0)) { }
-		Bitfield( T value ) : m_Bitset(1<<static_cast<underlying_t>(value)) { }
+		bitfield( void ) : m_Bitset(static_cast<underlying_t>(0)) { }
+		bitfield( T value ) : m_Bitset(1<<static_cast<underlying_t>(value)) { }
 		
 		//Bitfield( const Bitfield& bf ) : m_Bitset(bf.m_Bitset) { }
 		//Bitfield( Bitfield&& bf ) : m_Bitset(std::move(bf.m_Bitset)) { }
@@ -66,113 +66,113 @@ namespace angie
 		bool any( void ) const { return m_Bitset.any(); }
 		bool none( void ) const { return m_Bitset.none(); }
 
-		bool all( const Bitfield& other ) const { return (*this & other) == other; }
-		bool any( const Bitfield& other ) const { return (*this & other).any(); }
+		bool all( const bitfield& other ) const { return (*this & other) == other; }
+		bool any( const bitfield& other ) const { return (*this & other).any(); }
 
 		bool has( T value ) const { return m_Bitset.test(static_cast<size_t>(value)); }
 
-		bool operator==( const Bitfield& rhs ) const { return m_Bitset == rhs.m_Bitset; }
+		bool operator==( const bitfield& rhs ) const { return m_Bitset == rhs.m_Bitset; }
 		
-		Bitfield&	operator&=( const Bitfield& other ) { m_Bitset &= other.m_Bitset; return *this; }
-		Bitfield&	operator|=( const Bitfield& other ) { m_Bitset |= other.m_Bitset; return *this; }
-		Bitfield&	operator^=( const Bitfield& other ) { m_Bitset ^= other.m_Bitset; return *this; }
-		Bitfield	operator~() const { return ~m_Bitset; }
+		bitfield&	operator&=( const bitfield& other ) { m_Bitset &= other.m_Bitset; return *this; }
+		bitfield&	operator|=( const bitfield& other ) { m_Bitset |= other.m_Bitset; return *this; }
+		bitfield&	operator^=( const bitfield& other ) { m_Bitset ^= other.m_Bitset; return *this; }
+		bitfield	operator~() const { return ~m_Bitset; }
 
-		Bitfield	operator<<( size_t pos ) const { return m_Bitset << pos; }
-		Bitfield&	operator<<=( size_t pos ) { m_Bitset << pos; return *this; }
-		Bitfield	operator>>( size_t pos ) const { return m_Bitset >> pos; }
-		Bitfield&	operator>>=( size_t pos ) { m_Bitset >>= pos; return *this; }
+		bitfield	operator<<( size_t pos ) const { return m_Bitset << pos; }
+		bitfield&	operator<<=( size_t pos ) { m_Bitset << pos; return *this; }
+		bitfield	operator>>( size_t pos ) const { return m_Bitset >> pos; }
+		bitfield&	operator>>=( size_t pos ) { m_Bitset >>= pos; return *this; }
 
 	};
 
 	template< typename T > inline
-	Bitfield<T> operator&(const Bitfield<T>& left, const Bitfield<T>& right) noexcept
+	bitfield<T> operator&(const bitfield<T>& left, const bitfield<T>& right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans &= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator&(T left, T right) noexcept
+	bitfield<T> operator&(T left, T right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans &= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator&(T left, const Bitfield<T>& right) noexcept
+	bitfield<T> operator&(T left, const bitfield<T>& right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans &= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator&(const Bitfield<T>& left, T right) noexcept
+	bitfield<T> operator&(const bitfield<T>& left, T right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans &= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator|(const Bitfield<T>& left, const Bitfield<T>& right) noexcept
+	bitfield<T> operator|(const bitfield<T>& left, const bitfield<T>& right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans |= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator|(T left, T right) noexcept
+	bitfield<T> operator|(T left, T right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans |= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator|(T left, const Bitfield<T>& right) noexcept
+	bitfield<T> operator|(T left, const bitfield<T>& right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans |= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator|(const Bitfield<T>& left, T right) noexcept
+	bitfield<T> operator|(const bitfield<T>& left, T right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans |= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator^(const Bitfield<T>& left, const Bitfield<T>& right) noexcept
+	bitfield<T> operator^(const bitfield<T>& left, const bitfield<T>& right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans ^= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator^(T left, T right) noexcept
+	bitfield<T> operator^(T left, T right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans ^= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator^(T left, const Bitfield<T>& right) noexcept
+	bitfield<T> operator^(T left, const bitfield<T>& right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans ^= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator^(const Bitfield<T>& left, T right) noexcept
+	bitfield<T> operator^(const bitfield<T>& left, T right) noexcept
 	{
-		Bitfield<T> ans(left);
+		bitfield<T> ans(left);
 		return (ans ^= right);
 	}
 
 	template< typename T > inline
-	Bitfield<T> operator~(T mask) noexcept
+	bitfield<T> operator~(T mask) noexcept
 	{
-		Bitfield<T> ans(mask);
+		bitfield<T> ans(mask);
 		return ~ans;
 	}
 }

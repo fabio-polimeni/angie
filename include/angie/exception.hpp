@@ -21,7 +21,7 @@
 namespace angie
 {
 	/// Generic exception
-	class Exception : public std::exception
+	class erexception : public std::exception
 	{
 
 	private:
@@ -30,7 +30,7 @@ namespace angie
 
 	public:
 
-		explicit Exception( const std::string message )
+		explicit erexception( const std::string message )
 			: m_Message(message) { }
 
 		virtual const char* what( void ) const throw()

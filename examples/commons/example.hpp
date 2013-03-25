@@ -7,7 +7,7 @@
 
 #include "main_window.hpp"
 
-class Example : public angie::Application
+class Example : public angie::application
 {
 
 private:
@@ -19,18 +19,18 @@ private:
 	{
 		angie_info(angie::string::format<64>("%s",arg_v[0]).c_str());
 				
-		angie::Window::flag_type win_flags;
+		angie::window::flag_type win_flags;
 
 		win_flags.reset();
-		win_flags |= angie::Window::Flag::eEXITONCLOSE;
-		win_flags |= angie::Window::Flag::ePAINTONREQUEST;
-		//win_flags |= angie::Window::Flag::ePOPUPWINDOW;
+		win_flags |= angie::window::flag::eEXITONCLOSE;
+		win_flags |= angie::window::flag::ePAINTONREQUEST;
+		//win_flags |= angie::window::flag::ePOPUPWINDOW;
 		m_MainWindow = new MyWindow(win_flags);
 		m_MainWindow->create("Angie - Main Window",1024,768);
 
 		win_flags.reset();
-		win_flags |= angie::Window::Flag::ePARENTRELATIVE;
-		//win_flags |= angie::Window::Flag::ePOPUPWINDOW;
+		win_flags |= angie::window::flag::ePARENTRELATIVE;
+		//win_flags |= angie::window::flag::ePOPUPWINDOW;
 		m_ChildWindow = new MyWindow(win_flags);
 		m_ChildWindow->create("Angie - Child Window",800,600,m_MainWindow);
 

@@ -18,12 +18,12 @@
 
 namespace angie
 {
-	class WindowBase
+	class window_base
 	{
 		
 	public:
 
-		enum class State : uint8_t
+		enum class state : uint8_t
 		{
 			eINVALID		= 0,	// Invalid
 			eFULLSCREEN		= 1,	// Whether or not the window is in fullscreen
@@ -31,7 +31,7 @@ namespace angie
 			eTOPAINT		= 3		// Whether or not the window has got a pending paint request
 		};
 
-		enum class Flag : uint8_t
+		enum class flag : uint8_t
 		{
 			eEXITONCLOSE	= 0,	// If set, exit the application when close this window
 			ePAINTONREQUEST	= 1,	// If set, paint() function must be called by the user explicitely
@@ -39,20 +39,20 @@ namespace angie
 			ePARENTRELATIVE	= 3		// Child client rectangle will be relative to its parent
 		};
 
-		typedef Bitfield<State> state_type;
-		typedef Bitfield<Flag>	flag_type;
+		typedef bitfield<state> state_type;
+		typedef bitfield<flag>	flag_type;
 
 	private:
 			
-		WindowBase( const WindowBase& );				//= delete
-		WindowBase& operator = ( const WindowBase& );	//= delete
+		window_base( const window_base& );				//= delete
+		window_base& operator = ( const window_base& );	//= delete
 
 	protected:
 
-		WindowBase( void ) { }
-		explicit WindowBase( flag_type flags ) { }
+		window_base( void ) { }
+		explicit window_base( flag_type flags ) { }
 
-		virtual ~WindowBase( void ) { }
+		virtual ~window_base( void ) { }
 
 		virtual void onCreate( void )						= 0;
 		virtual void onDestroy( void)						= 0;
@@ -67,7 +67,7 @@ namespace angie
 
 		virtual void create( std::string title,
 			uint32_t width, uint32_t height,
-			WindowBase* parent = nullptr )							= 0;
+			window_base* parent = nullptr )							= 0;
 
 		virtual void destroy( void )								= 0;
 
@@ -91,7 +91,7 @@ namespace angie
 
 		virtual std::string getTitle( void ) const					= 0;
 
-		virtual WindowBase* getParent( void ) const					= 0;
+		virtual window_base* getParent( void ) const					= 0;
 			
 	};
 }
@@ -105,7 +105,7 @@ namespace angie
 // Expose Window interface
 namespace angie {
 #if ANGIE_PLATFORM & ANGIE_WIN
-	typedef win::WindowHandler Window;
+	typedef win::window_handler window;
 #endif
 }
 

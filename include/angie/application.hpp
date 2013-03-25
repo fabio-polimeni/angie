@@ -19,12 +19,12 @@
 
 namespace angie
 {
-	class ApplicationBase : public Singleton< ApplicationBase >
+	class application_base : public singleton< application_base >
 	{
 		
 	public:
 
-		enum class State : uint8_t
+		enum class state : uint8_t
 		{
 			eINVALID		= 0,
 			eINITIALISED	= 1,
@@ -32,20 +32,20 @@ namespace angie
 			eEXITREQUESTED	= 3	
 		};
 
-		typedef Bitfield<State> state_type;
+		typedef bitfield<state> state_type;
 
 	private:
 			
-		ApplicationBase( const ApplicationBase& );				//= delete
-		ApplicationBase& operator = ( const ApplicationBase& );	//= delete
+		application_base( const application_base& );				//= delete
+		application_base& operator = ( const application_base& );	//= delete
 
 	protected:
 
 		state_type	m_States;
 
-		ApplicationBase( void ) : Singleton(), m_States(State::eINVALID) { }
+		application_base( void ) : singleton(), m_States(state::eINVALID) { }
 
-		virtual ~ApplicationBase( void ) { }
+		virtual ~application_base( void ) { }
 
 		virtual bool onInit( int32_t arg_c, const char* arg_v[] )	= 0;
 		virtual void onTick( void )									= 0;
@@ -54,9 +54,9 @@ namespace angie
 	public:
 						
 		virtual void run( int32_t arg_c, const char* arg_v[] ) { }
-		void exit( void ) { m_States |= State::eEXITREQUESTED; }
+		void exit( void ) { m_States |= state::eEXITREQUESTED; }
 
-		bool isExitRequested( void ) const { return m_States.has(State::eEXITREQUESTED); }
+		bool isExitRequested( void ) const { return m_States.has(state::eEXITREQUESTED); }
 	};
 }
 
@@ -69,7 +69,7 @@ namespace angie
 // Expose Application interface
 namespace angie {
 #if ANGIE_PLATFORM & ANGIE_WIN
-	typedef win::ApplicationHandler Application;
+	typedef win::application_handler application;
 #endif
 }
 

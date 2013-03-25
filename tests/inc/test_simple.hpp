@@ -17,12 +17,12 @@ namespace angie
 {
 	namespace test
 	{
-		class Simple : public Unit
+		class Simple : public unit
 		{
 
 		public:
 
-			Simple( void ) : Unit( "Simple Test", [](std::vector<const Result>& results)
+			Simple( void ) : unit( "Simple Test", [](std::vector<const result>& results)
 			{
 				angie_test_check(results,1 != 0,"This is a simple success story.");
 				

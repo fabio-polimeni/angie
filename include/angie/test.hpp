@@ -31,7 +31,7 @@ namespace angie
 {
 	namespace test
 	{
-		struct Result
+		struct result
 		{
 			enum class type
 			{
@@ -42,18 +42,18 @@ namespace angie
 			type		_type;
 			std::string	_message;
 
-			Result( void )
+			result( void )
 				: _type(type::eSUCCESS)
 				, _message("") { }
 
-			Result( type t, std::string message )
+			result( type t, std::string message )
 				: _type(t), _message(message) { }
 			
-			Result( Result&& other )
+			result( result&& other )
 				: _type(other._type)
 				, _message(std::move(other._message)) { }
 
-			Result& operator= ( Result&& other )
+			result& operator= ( result&& other )
 			{
 				if ( this != &other )
 				{
@@ -67,14 +67,14 @@ namespace angie
 
 		// NOTE! - Don't call this function directly, use angie_test_check macro instead. -
 		implement
-		Result check( bool expr, std::string msg, std::string filename = "",
+		result check( bool expr, std::string msg, std::string filename = "",
 			std::int32_t fileline = -1, std::string expr_str = "" )
 		{
-			Result result;
+			result result;
 
 			if ( expr == false )
 			{
-				result._type = Result::type::eFAILURE;
+				result._type = result::type::eFAILURE;
 
 				result._message.append("\tFailure! ");
 				
@@ -98,7 +98,7 @@ namespace angie
 			}
 			else
 			{
-				result._type = Result::type::eSUCCESS;
+				result._type = result::type::eSUCCESS;
 				result._message = msg;
 			}
 
@@ -108,11 +108,11 @@ namespace angie
 		/// Unit test definition. Each of these is identified by a name
 		/// and a function, the actual test. You can has as many tests
 		/// as you want, per test-suite.
-		struct Unit
+		struct unit
 		{
-			std::function< void ( std::vector<const Result>& ) > _exec;
+			std::function< void ( std::vector<const result>& ) > _exec;
 
-			Unit( std::string name, decltype(_exec) exec_func )
+			unit( std::string name, decltype(_exec) exec_func )
 				: _exec(exec_func) { }
 		};
 
@@ -123,17 +123,17 @@ namespace angie
 		/// test_set.push_back( angie::test::Unit("My 1st Test", [](){ angie::check(true,"!!!success!!!"); }) );
 		///	angie::test::Suite test_suite("My Test Suite", test_set);
 
-		Result suite( std::string name, const std::vector<const Unit>& unit_set )
+		result suite( std::string name, const std::vector<const unit>& unit_set )
 		{				
-			std::promise<std::vector<const Result>> promises;
+			std::promise<std::vector<const result>> promises;
 			auto ftr = promises.get_future();
 				
 			std::thread suite_thread([&unit_set]( decltype(promises)& proms )
 			{
 				try
 				{
-					std::vector<const Result> test_results;
-					std::for_each(unit_set.begin(),unit_set.end(),[&test_results](const Unit& unit_test)
+					std::vector<const result> test_results;
+					std::for_each(unit_set.begin(),unit_set.end(),[&test_results](const unit& unit_test)
 					{
 						unit_test._exec(test_results);
 					});
@@ -151,35 +151,35 @@ namespace angie
 			size_t n_successes = 0;
 			auto test_results = ftr.get();
 			std::for_each( test_results.begin(), test_results.end(),
-				[&n_successes](const Result& result)
+				[&n_successes](const result& result)
 				{
-					if ( result._type == Result::type::eSUCCESS ) ++n_successes;
+					if ( result._type == result::type::eSUCCESS ) ++n_successes;
 				});
 			
 			angie_error(n_successes <= test_results.size());
 
-			Result suite_result;
+			result suite_result;
 			suite_result._message = name;
 
 			if ( n_successes == test_results.size() )
 			{
-				suite_result._type = Result::type::eSUCCESS;
+				suite_result._type = result::type::eSUCCESS;
 				suite_result._message += angie::string::format<64>(
 					": (%d successes of %d) -> Ok!\n",
 					n_successes, test_results.size());
 			}
 			else
 			{
-				suite_result._type = Result::type::eFAILURE;
+				suite_result._type = result::type::eFAILURE;
 				suite_result._message += angie::string::format<64>(
 					": (%d fails of %d) -> Ko!\n",
 					test_results.size()-n_successes, test_results.size());
 			}
 
 			std::for_each( test_results.begin(), test_results.end(),
-				[&suite_result](const Result& result)
+				[&suite_result](const result& result)
 				{
-					if ( result._type == Result::type::eFAILURE )
+					if ( result._type == result::type::eFAILURE )
 					{
 						suite_result._message.append(result._message);
 					}

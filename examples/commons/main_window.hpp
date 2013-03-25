@@ -6,7 +6,7 @@
 #include <angie/string.hpp>
 #include <angie/window.hpp>
 
-class MyWindow : public angie::Window
+class MyWindow : public angie::window
 {
 
 private:
@@ -55,8 +55,8 @@ private:
 
 public:
 
-	MyWindow( angie::Window::flag_type ft )
-		: angie::Window(ft) { }
+	MyWindow( angie::window::flag_type ft )
+		: angie::window(ft) { }
 	
 	~MyWindow( void ) { }
 

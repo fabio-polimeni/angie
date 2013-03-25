@@ -31,7 +31,7 @@ namespace angie
 					text_line = string::format<512>(
 						"ERROR:\t%s\n\tFunction - %s\n\tEvaluating - %s\n\tFile - %s : %d\n",
 						message, func_name, expr_string, file_name, line_num);
-					throw angie::Exception(text_line);
+					throw angie::erexception(text_line);
 				}
 				return false;
 
@@ -42,7 +42,7 @@ namespace angie
 						"WARNING:\t%s\n\tFunction - %s\n\tEvaluating - %s\n\tFile - %s : %d\n",
 						message, func_name, expr_string, file_name, line_num );
 				#if ( ANGIE_WARNASERROR )
-					throw angie::Exception(text_line);
+					throw angie::erexception(text_line);
 				#else
 					angie::output(text_line);
 				#endif

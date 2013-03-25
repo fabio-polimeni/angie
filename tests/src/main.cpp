@@ -24,10 +24,10 @@ int main( int argc, const char* argv[] )
 	{
 		angie::test::BitfieldTests bitfield_tests;
 
-		std::vector<const angie::test::Unit> container_set;
+		std::vector<const angie::test::unit> container_set;
 		container_set.push_back(bitfield_tests);
 
-		angie::test::Result container_result = angie::test::suite("Container Tests",container_set);
+		angie::test::result container_result = angie::test::suite("Container Tests",container_set);
 		angie::output( container_result._message );
 	}
 	catch( std::exception& e )

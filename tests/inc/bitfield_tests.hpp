@@ -21,7 +21,7 @@ namespace angie
 {
 	namespace test
 	{
-		class BitfieldTests : public Unit
+		class BitfieldTests : public unit
 		{
 			enum class InOut : char
 			{
@@ -33,9 +33,9 @@ namespace angie
 
 		public:
 
-			BitfieldTests( void ) : Unit( "Bitfield Tests", [](std::vector<const Result>& results)
+			BitfieldTests( void ) : unit( "Bitfield Tests", [](std::vector<const result>& results)
 			{
-				angie::Bitfield<InOut> in_bf(InOut::eIN);
+				angie::bitfield<InOut> in_bf(InOut::eIN);
 				
 				angie_test_check(results,in_bf.Bitset().any(),
 					"There should be at least one bit set");
@@ -49,23 +49,23 @@ namespace angie
 				angie_test_check(results,in_bf.has(InOut::eIN),
 					"The bitfiled should have the InOut::In bit set to 1");
 
-				angie::Bitfield<InOut> out_bf(InOut::eOUT);
+				angie::bitfield<InOut> out_bf(InOut::eOUT);
 				
 				out_bf |= InOut::eNONE;
 				angie_test_check(results,out_bf.has(InOut::eNONE),
 					"The bitfiled should have the InOut::eNONE bit set to 1");
 
-				out_bf &= ~angie::Bitfield<InOut>(InOut::eNONE);
+				out_bf &= ~angie::bitfield<InOut>(InOut::eNONE);
 				angie_test_check(results,!out_bf.has(InOut::eNONE),
 					"The bitfiled shouldn't have the InOut::eNONE bit set to 1");
 
-				angie::Bitfield<InOut> in_to_out(InOut::eIN);
+				angie::bitfield<InOut> in_to_out(InOut::eIN);
 				in_to_out <<= 1;
 
 				angie_test_check(results,in_to_out == InOut::eIN,
 					"The bitfiled expected to be equal to InOut::In");
 
-				angie::Bitfield<InOut> in_and_out(InOut::eIN | InOut::eOUT);
+				angie::bitfield<InOut> in_and_out(InOut::eIN | InOut::eOUT);
 				angie_test_check(results,in_and_out.has(InOut::eIN) && in_and_out.has(InOut::eOUT),
 					"The bitfiled should have set both InOut::In && InOut::Out");
 
