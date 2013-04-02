@@ -15,6 +15,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <algorithm>
+#include <limits>
 
 #include <angie/config.hpp>
 #include <angie/report.hpp>
@@ -219,8 +220,7 @@ namespace angie
 
 		public:
 				
-			explicit window_handler( flag_type flags = flag::eEXITONCLOSE )
-				: window_base(flags), m_HWND(NULL), m_Flags(flags)
+			explicit window_handler( void ) : window_base(), m_HWND(NULL)
 			{
 				ZeroMemory(&m_WCX,sizeof(WNDCLASSEX));
 				m_WCX.cbSize = sizeof(WNDCLASSEX);
@@ -248,10 +248,10 @@ namespace angie
 				destroy();
 			}
 
-			void create( std::string title,
-				uint32_t width, uint32_t height,
-				window_base* parent = nullptr )
+			virtual bool create( std::string title, uint32_t width, uint32_t height,
+				flag_type flags = flag::eEXITONCLOSE, window_base* parent = nullptr )
 			{
+				m_Flags = flags;
 				if ( parent )
 				{
 					// Only main windows can request an application to exit.
@@ -283,13 +283,17 @@ namespace angie
 
 					// WM_PAINT
 					UpdateWindow(m_HWND);
+
+					return true;
 				}
 
 				angie_error_msg(m_HWND != NULL,
 					angie::string::format<128>("Can't create the window: %s", title.c_str()).c_str());
+				
+				return false;
 			}
 				
-			void destroy( void )
+			virtual void destroy( void )
 			{
 				DestroyWindow(m_HWND);
 			}
@@ -517,7 +521,7 @@ namespace angie
 					}
 				}
 
-				return 0xffffffff;
+				return std::numeric_limits<int32_t>::max();
 			}
 
 			int32_t	getY( void ) const
@@ -531,7 +535,7 @@ namespace angie
 					}
 				}
 
-				return 0xffffffff;
+				return std::numeric_limits<int32_t>::max();
 			}
 
 			std::string getTitle( void ) const

@@ -6,7 +6,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Created : 2012-10-28													///
 /// Updated : 																///
-/// Licence : This source is under MIT License								///
+/// License : This source is under MIT License								///
 /// File    : string.hpp 													///
 ///////////////////////////////////////////////////////////////////////////////
 /// Description:															///
@@ -24,7 +24,6 @@
 
 #include <angie/config.hpp>
 #include <angie/types.hpp>
-
 
 /// Namespace definition
 namespace angie

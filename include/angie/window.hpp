@@ -50,8 +50,6 @@ namespace angie
 	protected:
 
 		window_base( void ) { }
-		explicit window_base( flag_type flags ) { }
-
 		virtual ~window_base( void ) { }
 
 		virtual void onCreate( void )						= 0;
@@ -65,9 +63,9 @@ namespace angie
 
 	public:
 
-		virtual void create( std::string title,
+		virtual bool create( std::string title,
 			uint32_t width, uint32_t height,
-			window_base* parent = nullptr )							= 0;
+			flag_type flags, window_base* parent = nullptr )		= 0;
 
 		virtual void destroy( void )								= 0;
 
@@ -90,8 +88,7 @@ namespace angie
 		virtual int32_t	getY( void ) const							= 0;
 
 		virtual std::string getTitle( void ) const					= 0;
-
-		virtual window_base* getParent( void ) const					= 0;
+		virtual window_base* getParent( void ) const				= 0;
 			
 	};
 }

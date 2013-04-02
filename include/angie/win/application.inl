@@ -32,7 +32,7 @@ namespace angie
 
 		public:
 
-			void run( int32_t arg_c, const char* arg_v[] )
+			virtual void run( int32_t arg_c, const char* arg_v[] )
 			{
 				application_handler* app = reinterpret_cast<application_handler*>(application_base::get());
 				if ( app == nullptr ) return;

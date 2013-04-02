@@ -55,10 +55,8 @@ private:
 
 public:
 
-	MyWindow( angie::window::flag_type ft )
-		: angie::window(ft) { }
-	
-	~MyWindow( void ) { }
+	MyWindow( void ) : angie::window() { }
+	virtual ~MyWindow( void ) { }
 
 };
 

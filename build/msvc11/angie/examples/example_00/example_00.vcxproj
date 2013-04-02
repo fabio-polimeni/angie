@@ -33,6 +33,9 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\examples\simple\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="example.json" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2F16B325-919D-473D-A71F-33AE5EE9ADCD}</ProjectGuid>
     <RootNamespace>example_00</RootNamespace>
@@ -73,24 +76,24 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="example.props" />
+    <Import Project="..\examples.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="example.props" />
+    <Import Project="..\examples.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Check|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\examples.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Import Project="example.props" />
+    <Import Project="..\examples.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Import Project="example.props" />
+    <Import Project="..\examples.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Check|x64'">
-    <Import Project="example.props" />
+    <Import Project="..\examples.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -98,10 +101,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ANGIE_INCLUDE_PATH)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>StackFrameRuntimeCheck</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PreprocessorDefinitions>_DEBUG;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ANGIE_EXAMPLE)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -113,8 +116,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(ANGIE_INCLUDE_PATH)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_RELEASE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ANGIE_EXAMPLE)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -128,8 +131,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(ANGIE_INCLUDE_PATH)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CHECK;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ANGIE_EXAMPLE)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -139,31 +142,31 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ANGIE_INCLUDE_PATH)</AdditionalIncludeDirectories>
       <WarningLevel>Level3</WarningLevel>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <MinimalRebuild>true</MinimalRebuild>
       <PreprocessorDefinitions>_DEBUG;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>StackFrameRuntimeCheck</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>$(ANGIE_EXAMPLE)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ANGIE_INCLUDE_PATH)</AdditionalIncludeDirectories>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_RELEASE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AdditionalIncludeDirectories>$(ANGIE_EXAMPLE)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Check|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ANGIE_INCLUDE_PATH)</AdditionalIncludeDirectories>
       <WarningLevel>Level3</WarningLevel>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <PreprocessorDefinitions>_CHECK;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ANGIE_EXAMPLE)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

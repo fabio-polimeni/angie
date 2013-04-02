@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Created : 2013-01-27
 /// Updated :
-/// Licence : This source is under MIT License
+/// License : This source is under MIT License
 /// File    : main.cpp
 ///////////////////////////////////////////////////////////////////////////////
 /// Example main
@@ -12,8 +12,6 @@
 #include <string>
 #include <exception>
 #include <memory>
-
-#include <angie/test.hpp>
 
 #include "example.hpp"
 
@@ -26,10 +24,7 @@ int main( int argc, const char* argv[] )
 	}
 	catch( std::exception& e )
 	{
-		std::string e_msg("!!! EXCEPTION COUGHT !!!\n");
-		e_msg.append(e.what());
-		
-		angie::output(e_msg);
+		angie::output(e.what());
 		std::abort();
 	}
 

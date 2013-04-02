@@ -5,6 +5,7 @@
 #include <functional>
 #include <string>
 #include <thread>
+#include <mutex>
 
 #include <angie/log.hpp>
 #include <angie/debugger.hpp>

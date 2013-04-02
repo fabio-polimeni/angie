@@ -2,8 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <ANGIE_DIR>..\..\..\..\</ANGIE_DIR>
-    <ANGIE_INCLUDE>$(ANGIE_DIR)include\</ANGIE_INCLUDE>
+    <ANGIE_DIR>..\..\..\..</ANGIE_DIR>
+    <ANGIE_INCLUDE>$(ANGIE_DIR)\include</ANGIE_INCLUDE>
+    <ANGIE_DEPS>$(ANGIE_DIR)\deps</ANGIE_DEPS>
+    <ANGIE_PICOJSON>$(ANGIE_DEPS)\picojson</ANGIE_PICOJSON>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
@@ -13,6 +15,12 @@
     </BuildMacro>
     <BuildMacro Include="ANGIE_INCLUDE">
       <Value>$(ANGIE_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ANGIE_DEPS">
+      <Value>$(ANGIE_DEPS)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ANGIE_PICOJSON">
+      <Value>$(ANGIE_PICOJSON)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

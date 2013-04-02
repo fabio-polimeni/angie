@@ -6,17 +6,17 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Created : 2012-10-27													///
 /// Updated : 																///
-/// Licence : This source is under MIT License								///
+/// License : This source is under MIT License								///
 /// File    : config.hpp 													///
 ///////////////////////////////////////////////////////////////////////////////
 /// Description:															///
 ///																			///
 ///	This file is use to configure the library and its dependencies.			///
-///	 Each proprocessor macro is explained on top of its declaration.		///
+///	 Each preprocessor macro is explained on top of its declaration.		///
 ///////////////////////////////////////////////////////////////////////////////
 
 /// If this directive is 1, the library won't be compiled,
-/// and everything will be included from the haders.
+/// and everything will be included from the headers.
 #define ANGIE_HEADER_ONLY	1
 
 /// Traits warning as errors
@@ -47,7 +47,7 @@
 
 /// In order to avoid multiple dependencies, we define this
 /// preprocessor directive, which makes everything inline
-/// for hader only library.
+/// for header only library.
 #if ANGIE_HEADER_ONLY
 #	define implement inline
 #else

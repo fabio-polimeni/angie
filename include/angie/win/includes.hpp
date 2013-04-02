@@ -38,7 +38,10 @@
 #define NOPROFILER
 #define NODEFERWINDOWPOS
 #define NOMCX
-#define WIN32_LEAN_AND_MEAN 1
+
+#ifndef WIN32_LEAN_AND_MEAN
+	#define WIN32_LEAN_AND_MEAN 1
+#endif
 #include <windows.h>
 
 #endif // ANGIE_WIN_INCLUDES_HPP

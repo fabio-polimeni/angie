@@ -102,22 +102,22 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Check|Win32'">
-    <IncludePath>$(ANGIE_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(ANGIE_INCLUDE);$(ANGIE_PICOJSON);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ANGIE_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(ANGIE_INCLUDE);$(ANGIE_PICOJSON);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(ANGIE_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(ANGIE_INCLUDE);$(ANGIE_PICOJSON);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Check|x64'">
-    <IncludePath>$(ANGIE_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(ANGIE_INCLUDE);$(ANGIE_PICOJSON);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ANGIE_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(ANGIE_INCLUDE);$(ANGIE_PICOJSON);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ANGIE_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(ANGIE_INCLUDE);$(ANGIE_PICOJSON);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -195,6 +195,9 @@
     <ClInclude Include="..\..\..\..\include\angie\config.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\debugger.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\exception.hpp" />
+    <ClInclude Include="..\..\..\..\include\angie\json\application.hpp" />
+    <ClInclude Include="..\..\..\..\include\angie\json\json.hpp" />
+    <ClInclude Include="..\..\..\..\include\angie\json\window.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\singleton.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\log.hpp" />
     <ClInclude Include="..\..\..\..\include\angie\report.hpp" />

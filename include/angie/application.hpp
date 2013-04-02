@@ -73,4 +73,4 @@ namespace angie {
 #endif
 }
 
-#endif // ANGIE_WINDOW_HPP
+#endif // ANGIE_APPLICATION_HPP

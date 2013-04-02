@@ -2,13 +2,30 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <ANGIE_INCLUDE_PATHS>..\..\..\..\..\include;..\..\..\..\..\examples\commons;</ANGIE_INCLUDE_PATHS>
+    <ANGIE_DIR>..\..\..\..\..</ANGIE_DIR>
+    <ANGIE_INCLUDE>$(ANGIE_DIR)\include</ANGIE_INCLUDE>
+    <ANGIE_DEPS>$(ANGIE_DIR)\deps</ANGIE_DEPS>
+    <ANGIE_EXAMPLE>$(ANGIE_DIR)\examples\commons;$(ANGIE_INCLUDE);$(ANGIE_DEPS)\chaiscript\include;$(ANGIE_DEPS)\picojson</ANGIE_EXAMPLE>
   </PropertyGroup>
   <PropertyGroup />
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
-    <BuildMacro Include="ANGIE_INCLUDE_PATHS">
-      <Value>$(ANGIE_INCLUDE_PATHS)</Value>
+    <BuildMacro Include="ANGIE_DIR">
+      <Value>$(ANGIE_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ANGIE_INCLUDE">
+      <Value>$(ANGIE_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ANGIE_DEPS">
+      <Value>$(ANGIE_DEPS)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ANGIE_EXAMPLE">
+      <Value>$(ANGIE_EXAMPLE)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

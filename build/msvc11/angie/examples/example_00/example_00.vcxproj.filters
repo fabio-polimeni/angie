@@ -9,6 +9,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{a52ad762-4303-4977-a9f0-a704bd40c394}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\examples\commons\example.hpp">
@@ -22,5 +25,10 @@
     <ClCompile Include="..\..\..\..\..\examples\simple\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="example.json">
+      <Filter>data</Filter>
+    </None>
   </ItemGroup>
 </Project>

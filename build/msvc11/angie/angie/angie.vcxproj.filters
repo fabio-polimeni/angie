@@ -7,6 +7,9 @@
     <Filter Include="win">
       <UniqueIdentifier>{2ef3a079-0374-49ad-b1ef-934857827767}</UniqueIdentifier>
     </Filter>
+    <Filter Include="inc\json">
+      <UniqueIdentifier>{167b2fb7-f6a0-45a2-bada-1889f7792aa3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\include\angie\config.hpp">
@@ -47,6 +50,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\include\angie\window.hpp">
       <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\angie\json\application.hpp">
+      <Filter>inc\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\angie\json\json.hpp">
+      <Filter>inc\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\angie\json\window.hpp">
+      <Filter>inc\json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
