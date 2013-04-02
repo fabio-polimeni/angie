@@ -10,9 +10,6 @@
 [submodule "deps/gli"]
 	path = deps/gli
 	url = git://github.com/g-truc/gli.git
-[submodule "deps/picojason"]
-	path = deps/picojason
-	url = git://github.com/kazuho/picojson.git
 [submodule "deps/chaiscript"]
 	path = deps/chaiscript
 	url = git://github.com/ChaiScript/ChaiScript.git
