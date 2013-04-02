@@ -1,0 +1,49 @@
+{
+	"application":
+	{
+		"windows":
+		[
+			{
+				"title": "Main Window",
+				"width": 800,
+				"height": 600,
+				"fullscreen": 1,
+				"options":
+				[
+					"EXITONCLOSE",
+					"PAINTONREQUEST"
+				],
+
+				"children":
+				[
+					{
+						"title": "Document-0",
+						"x": 0,
+						"y": 0,
+						"width": 400,
+						"height": 300,
+						"options":
+						[
+							"PARENTRELATIVE",
+							"PAINTONREQUEST",
+							"POPUPWINDOW"
+						]
+					},
+					{
+						"title": "Document-1",
+						"x": 400,
+						"y": 300,
+						"width": 400,
+						"height": 300,
+						"options":
+						[
+							"PARENTRELATIVE",
+							"PAINTONREQUEST",
+							"POPUPWINDOW"
+						]
+					}
+				]
+			}
+		]
+	}
+}
